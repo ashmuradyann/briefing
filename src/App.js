@@ -7,7 +7,7 @@ import Finish from './components/finish/Finish'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Welcome />}/>
+      <Route path="/briefing" element={<Welcome />}/>
       <Route path="/questions" element={<Questions />} />
       <Route path="/finish" element={<Finish />} />
     </Routes>
