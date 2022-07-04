@@ -1,0 +1,63 @@
+.progress {
+    color: #75778A;
+    
+    h2 {
+        font-weight: 600;
+        margin-left: 20px;
+    }
+
+    .progress__wrapper{
+        display: flex;
+        margin-bottom: 10px;
+
+        .progress__bar {
+            margin-left: 20px;
+            width: 120px;
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .filled {
+            background-color: #9DB9FF;
+        }
+        
+        .empty {
+            background-color: #D9DBE9;
+        }
+    }
+    
+}
+
+@media (max-width: 1550px) {
+    .progress {
+        
+        h2 {
+            font-size: 1.3rem;
+        }
+    
+        .progress__wrapper{
+    
+            .progress__bar {
+                width: 100px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .progress {
+        
+        h2 {
+            font-size: 1.1rem;
+        }
+    
+        .progress__wrapper{
+    
+            .progress__bar {
+                width: 80px;
+                height: 10px;
+            }
+        }
+    }
+}

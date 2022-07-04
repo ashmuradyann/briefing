@@ -1,0 +1,330 @@
+.welcome__wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 130px 150px 160px 150px;
+    background-color: #3f6de2;
+    color: #fff;
+    background-image: url(../../assets/images/welcome-bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+
+    .welcome__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+
+        .welcome_logo_phones {
+            display: none;
+        }
+
+        .welcome {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .welcome__text {
+                width: 50%;
+            }
+
+            .welcome__text h2 {
+                margin-top: 30px;
+            }
+
+            .welcome__logo {
+                width: 400px;
+                height: 120px;
+            }
+            
+        }
+
+        .starting {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .starting__text {
+                width: 60%;
+                padding-bottom: 25px;
+            }
+
+            .starting__text h2 {
+                margin-bottom: 60px;
+            }
+
+            .start__button {
+                padding: 25px 80px;
+                background-color: #fff;
+                border-radius: 30px;
+                font-size: 1.7rem;
+                font-weight: 600;
+            }
+
+            .feedbackInfo__wrapper {
+                width: 500px;
+                font-size: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            .feedbackInfo {
+                background-color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #000;
+                padding: 20px 30px;
+                font-weight: bold;
+                border-radius: 15px;
+            }
+
+            .feedbackInfo>* {
+                margin-right: 30px;
+            }
+
+            .feedbackInfo span {
+                color: #3f6ee2;
+            }
+        }
+    }
+}
+
+@media (max-width: 1920px) {
+
+    .welcome__wrapper {
+        padding: 130px 120px 160px 120px;
+
+        h1 {
+            font-size: 3rem !important;
+        }
+
+        h2 {
+            font-size: 1.4rem !important;
+        }
+
+        .feedbackInfo__wrapper {
+            font-size: 1rem !important;
+            width: 400px !important;
+        }
+
+        .start__button {
+            padding: 20px 65px !important;
+            font-size: 1.4rem !important;
+        }
+
+        .welcome__logo {
+            width: 370px;
+            height: 100px;
+        }
+    }
+
+}
+
+@media (max-width: 1740px) {
+
+    .welcome__wrapper {
+        padding: 80px 130px 100px 130px;
+    }
+
+}
+
+@media (max-width: 1560px) {
+
+    .welcome__wrapper {
+        padding: 100px 110px;
+        background-size: 50%;
+
+        .welcome__container {
+            h1 {
+                font-size: 2.7rem;
+            }
+
+            h2 {
+                font-size: 1.2rem !important;
+            }
+
+            .start__button {
+                padding: 20px 65px !important;
+                font-size: 1.4rem !important;
+            }
+
+            .welcome__logo {
+                width: 350px;
+                height: 90px;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 1340px) {
+
+    .welcome__wrapper {
+        padding: 120px 90px;
+
+        .welcome__container {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .start__button {
+                padding: 20px 65px !important;
+                font-size: 1.4rem !important;
+            }
+
+            .feedbackInfo__wrapper {
+                font-size: .8rem !important;
+                width: 370px !important;
+            }
+
+            .welcome {
+                .welcome__logo {
+                    width: 300px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .welcome__wrapper {
+        padding: 60px 50px;
+
+        .feedbackInfo__wrapper {
+            font-size: .6rem !important;
+        }
+
+        .welcome {
+            .welcome__logo {
+                width: 250px;
+                height: 75px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+
+    .welcome__wrapper {
+        padding: 70px 30px;
+
+        h1 {
+            font-size: 2.1rem !important;
+        }
+
+        .start__button {
+            padding: 20px 65px !important;
+            font-size: 1.2rem !important;
+        }
+
+        .welcome {
+            .welcome__logo {
+                width: 230px !important;
+                height: 65px !important;
+            }
+        }
+
+        .feedbackInfo > *:not(img) {
+            margin: 0 !important;
+        }
+
+    }
+}
+
+@media (max-width: 800px) {
+
+    .welcome__wrapper {
+        padding: 100px 30px;
+
+        h1 {
+            font-size: 2rem !important;
+        }
+
+        .start__button {
+            padding: 20px 65px !important;
+        }
+
+        .welcome__logo {
+            width: 250px;
+            height: 75px;
+        }
+
+        .feedbackInfo__wrapper {
+            font-size: .8rem !important;
+            width: 370px !important;
+        }
+
+        .feedbackInfo > *:not(img) {
+            margin-right: 0 !important;
+        }
+
+    }
+}
+
+@media (max-width: 650px) {
+
+    .welcome__wrapper {
+        background-image: none;
+        padding: 50px 30px;
+
+        h1 {
+            font-size: 2rem !important;
+        }
+
+        .start__button {
+            padding: 20px 65px !important;
+        }
+
+        .welcome_logo_phones {
+            display: block !important;
+            width: 250px;
+            height: 60px;
+        }
+
+        .welcome {
+            flex-direction: column;
+
+            .welcome__text {
+                width: 100% !important;
+            }
+
+            .welcome__logo {
+                display: none;
+            }
+
+        }
+
+        .starting__text {
+            width: 100% !important;
+        }
+
+        .feedbackInfo__wrapper {
+            display: none !important;
+            .feedbackInfo {
+                display: none !important;
+            }
+
+        }
+
+
+
+    }
+}

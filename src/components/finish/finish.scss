@@ -1,0 +1,230 @@
+.finish__wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    background-color: #3f6de2;
+    color: #fff;
+    background-image: url(../../assets/images/finish-bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+
+    .finish__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+
+        a {
+            color: #fff;
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .finish {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .finish__text {
+                width: 50%;
+
+                .h2 {
+                    margin-top: 30px;
+                }
+
+                .href {
+                    margin-top: 10px;
+                }
+
+            }
+
+            .finish__logo {
+                width: 230px;
+                height: 70px;
+            }
+
+        }
+
+        .contacts {
+            margin-top: 130px;
+
+            h2 {
+                font-weight: 400;
+                margin-bottom: 10px;
+            }
+
+            .icons {
+                padding: 30px 0;
+
+                a {
+                    margin: 0 10px 0 0;
+                }
+
+                a img {
+                    transition: .3s;
+                }
+
+                a:hover img {
+                    transform: translateY(-10px);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    .finish__wrapper {
+        padding: 120px;
+
+        h1 {
+            font-size: 4rem !important;
+        }
+
+        h2 {
+            font-size: 2.5rem !important;
+        }
+
+        a {
+            font-size: 2.5rem !important;
+        }
+
+    }
+}
+
+@media (max-width: 1920px) {
+    .finish__wrapper {
+        padding: 80px;
+
+        h1 {
+            font-size: 3rem !important;
+        }
+
+        h2 {
+            font-size: 1.5rem !important;
+        }
+
+        a {
+            font-size: 1.5rem !important;
+        }
+
+    }
+}
+
+@media (max-width: 1550px) {
+    .finish__wrapper {
+        background-size: 50%;
+        padding: 50px 80px 100px 80px;
+    }
+}
+
+@media (max-width: 1166px) {
+    .finish__wrapper {
+        padding: 100px 80px;
+
+        h1 {
+            font-size: 2.6rem !important;
+        }
+
+        h2 {
+            font-size: 1.2rem !important;
+        }
+
+        a {
+            font-size: 1.2rem !important;
+        }
+
+    }
+}
+
+@media (max-width: 991px) {
+    .finish__wrapper {
+        // background-image: none;
+        padding: 60px 30px 100px 30px;
+
+        h1 {
+            font-size: 2.6rem !important;
+        }
+
+        h2 {
+            font-size: 1.2rem !important;
+        }
+
+        a {
+            font-size: 1.2rem !important;
+        }
+
+        .finish__container {
+            .finish {
+
+                .finish__text {
+                    width: 60%
+                }
+
+                .finish__logo {
+                    width: 200px;
+                    height: 60px;
+                    // display: none;
+                }
+
+            }
+
+            .contacts {
+                margin-top: 100px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .finish__wrapper {
+        padding: 70px 30px 60px 30px;
+        background-image: none;
+
+        h1 {
+            font-size: 2.6rem !important;
+        }
+
+        h2 {
+            font-size: 1.2rem !important;
+        }
+
+        a {
+            font-size: 1.2rem !important;
+        }
+
+        .finish__container {
+            .finish {
+
+                .finish__text {
+                    width: 100%
+                }
+
+                .finish__logo {
+                    display: none;
+                }
+
+            }
+
+            .contacts {
+                margin-top: 70px;
+            }
+        }
+    }
+}
