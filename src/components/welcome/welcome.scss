@@ -25,6 +25,7 @@
         h2 {
             font-size: 1.7rem;
             font-weight: 500;
+            margin-left: 0;
         }
 
         .welcome_logo_phones {
@@ -283,7 +284,7 @@
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 640px) {
 
     .welcome__wrapper {
         background-image: none;
@@ -313,7 +314,6 @@
             .welcome__logo {
                 display: none;
             }
-
         }
 
         .starting__text {
@@ -327,8 +327,5 @@
             }
 
         }
-
-
-
     }
 }
