@@ -11,7 +11,6 @@ const Navigation = ({ progress, setProgress, data }) => {
 
     const [isValid, setIsValid] = useState(null)
     const [warnMessage, setWarnMessage] = useState(null)
-    console.log(isValid)
 
     return (
         <div className="navbar">
@@ -32,7 +31,7 @@ const Navigation = ({ progress, setProgress, data }) => {
                             <img src={prev} alt="prev-btn" />
                             <p>Назад</p>
                         </div>
-                        : <Link className="prev__btn" to="/">
+                        : <Link className="prev__btn" to="/briefing">
                             <img src={prev} alt="prev-btn" />
                             <p>Назад</p>
                         </Link>

@@ -27,8 +27,6 @@ const Questions = () => {
     anyQuestions: "",
   })
 
-  console.log(data.name)
-
   return (
     <div className="questions__wrapper">
       <div className="questions__container">
