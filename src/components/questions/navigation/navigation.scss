@@ -46,7 +46,7 @@
             border: 3px solid #3F6DE2;
             border-radius: 25px;
         }
-    
+        
         .next__btn {
             padding: 23px 40px;
             background-color: #3F6DE2;
@@ -116,11 +116,11 @@
             img {
                 width: 30px;
             }
-    
+            
             .prev__btn {
                 padding: 20px 40px;
             }
-        
+            
             .next__btn {
                 padding: 23px 40px;
             }
@@ -141,9 +141,100 @@
             .prev__btn {
                 padding: 15px 35px;
             }
-        
+            
             .next__btn {
                 padding: 18px 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .navigation {
+        
+        .navigation__wrapper, .prev__btn, .next__btn {
+            font-size: .9rem;
+    
+            img {
+                width: 25px;
+            }
+            
+            .prev__btn {
+                padding: 10px 27px;
+                border-radius: 20px;
+            }
+            
+            .next__btn {
+                padding: 13px 27px;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        margin-top: 20px;
+        padding: 0;
+    }
+    .navigation {
+        margin-top: 20px;
+        justify-content: center;
+        
+        .navigation__wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .navigation__wrapper, .prev__btn, .next__btn {
+            width: 70%;
+            justify-content: center;
+            font-size: 1rem;
+            
+            img {
+                width: 25px;
+            }
+            
+            .prev__btn {
+                width: 330px;
+                margin-right: 0;
+            }
+            
+            .next__btn {
+                width: 330px;
+                margin-top: 15px;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .navigation {
+        margin-top: 20px;
+        justify-content: center;
+        
+        .navigation__wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .navigation__wrapper, .prev__btn, .next__btn {
+            width: 100%;
+            justify-content: center;
+            font-size: .9rem;
+            
+            img {
+                width: 25px;
+            }
+            
+            .prev__btn {
+                width: 100%;
+            }
+            
+            .next__btn {
+                width: 100%;
+                margin-top: 10px;
             }
         }
     }

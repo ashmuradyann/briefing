@@ -23,7 +23,7 @@ const TextArea = styled(Input.TextArea)`
   &.ant-input-focused {
     border-color: #75778A;
     outline: 0;
-    box-shadow: 0 0 0 2px #886cc02e;
+    box-shadow: 0 0 0 4px #9dbaff;
   }
   &[disabled] {
     color: #00000096;

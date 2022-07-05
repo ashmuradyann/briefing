@@ -33,7 +33,9 @@ const Questions = () => {
         <div>
           <div className="questions__title">
             <h1>{title}</h1>
-            <Progress progress={progress} />
+            <div className="progress">
+              <Progress progress={progress} />
+            </div>
           </div>
           <QuestionPage progress={progress} setTitle={setTitle} data={data} setData={setData} />
         </div>
