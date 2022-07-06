@@ -1,7 +1,7 @@
 .question__wrapper {
     font-weight: 600;
-    font-size: 1.5rem;
-    
+    font-size: 1.3rem;
+
     .input_name_wrapper {
         margin-top: 50px;
 
@@ -11,12 +11,25 @@
             width: 500px;
             height: 60px;
             padding: 5px 15px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #75778A;
             font-weight: 300;
         }
-        
-        p, ::placeholder {
+
+        // .ant-input-affix-wrapper {
+        //     border: none;
+        //     height: 50px;
+        //     position: relative;
+
+        //     span {
+        //         position: absolute;
+        //         top: 37%;
+        //         left: 93%;
+        //     }
+        // }
+
+        p,
+        ::placeholder {
             color: #75778A;
             font-weight: 400;
         }
@@ -28,7 +41,7 @@
             align-items: center;
         }
 
-        div > * {
+        div>* {
             margin-right: 30px;
         }
 
@@ -38,7 +51,7 @@
         margin-top: 70px;
 
         div {
-             margin-top: 10px;
+            margin-top: 10px;
         }
 
         .radio__wrapper {
@@ -47,14 +60,9 @@
             align-items: center;
         }
 
-        input[type="radio"] {
-            width: 3em;
-            height: 3em;
-        }
-        
         span {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 500;
         }
     }
@@ -68,15 +76,16 @@
             width: 500px;
             height: 60px;
             padding: 5px 15px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #75778A;
             font-weight: 300;
         }
-        
-        p, ::placeholder {
+
+        p,
+        ::placeholder {
             color: #75778A;
             font-weight: 400;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         div {
@@ -85,13 +94,21 @@
             justify-content: flex-start;
         }
 
-        div > * {
+        div>* {
             margin-right: 30px;
         }
 
         textarea {
-            min-width: 50%;
-            font-size: 1.5rem;
+            min-width: 100%;
+            max-width: 100%;
+            font-size: 1.3rem;
+            background-image: url("../../../../assets/icons/Expand.svg");
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+        }
+
+        ::-webkit-resizer {
+            display: none;
         }
     }
 }
@@ -99,47 +116,47 @@
 @media (max-width: 1920px) {
 
     .question__wrapper {
-        font-size: 1.3rem;
-        
+        font-size: 1.1rem;
+
         .input_name_wrapper {
             margin-top: 20px;
-    
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
-    
+
         .input_radio_wrapper {
             margin-top: 20px;
-    
-            input[type="radio"] {
-                width: 3em;
-                height: 3em;
+
+            .MuiSvgIcon-root {
+                font-size: 1.8rem;
             }
-            
+
             span {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
-    
+
         .input_textarea_wrapper {
             margin-top: 50px;
-    
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
-            
-            p, ::placeholder {
-                font-size: 1.3rem;
+
+            p,
+            ::placeholder {
+                font-size: 1.1rem;
             }
-    
+
             textarea {
                 min-width: 50%;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
     }
@@ -148,43 +165,48 @@
 @media (max-width: 1550px) {
 
     .question__wrapper {
-        font-size: 1.3rem;
-        
+        font-size: 1.1rem;
+
         .input_name_wrapper {
             margin-top: 40px;
-    
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
-    
+
         }
-    
+
         .input_radio_wrapper {
             margin-top: 60px;
-            
+
+            .MuiSvgIcon-root {
+                font-size: 1.6rem;
+            }
+
             span {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
-    
+
         .input_textarea_wrapper {
             margin-top: 50px;
-    
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
-            
-            p, ::placeholder {
-                font-size: 1.3rem;
+
+            p,
+            ::placeholder {
+                font-size: 1.1rem;
             }
-    
+
             textarea {
                 min-width: 50%;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
     }
@@ -193,54 +215,55 @@
 @media (max-width: 1360px) {
 
     .question__wrapper {
-        font-size: 1.1rem;
-        
+        font-size: .9rem;
+
         .input_name_wrapper {
             margin-top: 15px;
-    
+
             input {
                 width: 400px;
                 height: 50px;
-                font-size: 1.1rem;
+                font-size: .9rem;
             }
         }
-    
+
         .input_radio_wrapper {
             margin-top: 30px;
-    
+
             .radio__wrapper {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
             }
-    
+
             .MuiSvgIcon-root {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
-            
+
             span {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
-    
+
         .input_textarea_wrapper {
             margin-top: 50px;
-    
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
-            
-            p, ::placeholder {
+
+            p,
+            ::placeholder {
                 color: #75778A;
                 font-weight: 400;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
-    
+
             textarea {
                 min-width: 50%;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
     }
@@ -249,48 +272,49 @@
 @media (max-width: 991px) {
 
     .question__wrapper {
-        font-size: .9rem;
-        
+        font-size: .7rem;
+
         .input_name_wrapper {
             margin-top: 15px;
-    
+
             input {
                 width: 320px;
                 height: 35px;
-                font-size: .9rem;
+                font-size: .7rem;
             }
         }
-    
+
         .input_radio_wrapper {
             margin-top: 30px;
-    
+
             .MuiSvgIcon-root {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
-            
+
             span {
-                font-size: 1rem;
+                font-size: .8rem;
             }
         }
-    
+
         .input_textarea_wrapper {
             margin-top: 50px;
-    
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1rem;
+                font-size: .8rem;
             }
-            
-            p, ::placeholder {
+
+            p,
+            ::placeholder {
                 color: #75778A;
                 font-weight: 400;
-                font-size: 1rem;
+                font-size: .8rem;
             }
-    
+
             textarea {
                 min-width: 50%;
-                font-size: 1rem;
+                font-size: .8rem;
             }
         }
     }
@@ -299,11 +323,11 @@
 @media (max-width: 640px) {
 
     .question__wrapper {
-        font-size: 1.2rem;
-        
+        font-size: 1.1rem;
+
         .input_name_wrapper {
             margin-top: 15px;
-            
+
             div {
                 justify-content: flex-start;
                 align-items: normal;
@@ -312,66 +336,7 @@
                 p {
                     order: 1;
                 }
-                
-                input {
-                    margin: 15px auto 0;
-                    order: 2;
-                    width: 100%;
-                    height: 50px;
-                    font-size: .9rem;
-                }
-            }
 
-        }
-    
-        .input_radio_wrapper {
-            margin-top: 30px;
-    
-            .MuiSvgIcon-root {
-                font-size: 1.5rem;
-            }
-            
-            span {
-                font-size: 1.2rem;
-            }
-        }
-    
-        .input_textarea_wrapper {
-            margin-top: 25px;
-
-            div {
-                flex-direction: column;
-
-                p {
-                    margin-bottom: 20px;
-                }
-
-                p, ::placeholder {
-                    font-size: 1.2rem;
-                }
-                
-                textarea {
-                    margin: auto;
-                    order: 2;
-                    width: 100%;
-                    height: 250px;
-                    font-size: 1.2rem;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 360px) {
-
-    .question__wrapper {
-        font-size: 1rem;
-        
-        .input_name_wrapper {
-            margin-top: 15px;
-            
-            div {
-                
                 input {
                     margin: 15px auto 0;
                     order: 2;
@@ -382,39 +347,100 @@
             }
 
         }
-    
+
         .input_radio_wrapper {
             margin-top: 30px;
-    
+
             .MuiSvgIcon-root {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
-            
+
             span {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
         }
-    
+
+        .input_textarea_wrapper {
+            margin-top: 25px;
+
+            div {
+                flex-direction: column;
+
+                p {
+                    margin-bottom: 20px;
+                }
+
+                p,
+                ::placeholder {
+                    font-size: 1.1rem;
+                }
+
+                textarea {
+                    margin: auto;
+                    order: 2;
+                    width: 100%;
+                    height: 250px;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+
+    .question__wrapper {
+        font-size: .8rem;
+
+        .input_name_wrapper {
+            margin-top: 15px;
+
+            div {
+
+                input {
+                    margin: 15px auto 0;
+                    order: 2;
+                    width: 100%;
+                    height: 50px;
+                    font-size: .6rem;
+                }
+            }
+
+        }
+
+        .input_radio_wrapper {
+            margin-top: 30px;
+
+            .MuiSvgIcon-root {
+                font-size: 1rem;
+            }
+
+            span {
+                font-size: .8rem;
+            }
+        }
+
         .input_textarea_wrapper {
 
             p {
                 order: 1;
             }
-            
+
             input {
                 width: 500px;
                 height: 60px;
-                font-size: 1rem;
+                font-size: .8rem;
             }
-            
-            p, ::placeholder {
-                font-size: 1rem;
+
+            p,
+            ::placeholder {
+                font-size: .8rem;
             }
-            
+
             textarea {
                 order: 2;
                 min-width: 50%;
-                font-size: 1rem;
+                font-size: .8rem;
             }
         }
     }

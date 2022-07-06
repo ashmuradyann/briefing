@@ -2,15 +2,17 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FormControlLabel, Checkbox } from '@mui/material'
 
-import next from '../../../assets/images/next.png'
-import prev from '../../../assets/images/prev.png'
+import ArrowRight from './ArrowRight'
+import ArrowLeft from './ArrowLeft'
 
 import './navigation.scss'
 
-const Navigation = ({ progress, setProgress, data }) => {
+const Navigation = ({ progress, setProgress }) => {
 
     const [isValid, setIsValid] = useState(null)
     const [warnMessage, setWarnMessage] = useState(null)
+    const [leftHover, setLeftHover] = useState(null)
+    const [rightHover, setRightHover] = useState(null)
 
     return (
         <div className="navbar">
@@ -27,23 +29,41 @@ const Navigation = ({ progress, setProgress, data }) => {
             <div className="navigation">
                 <div className="navigation__wrapper">
                     {progress !== 1
-                        ? <div className="prev__btn" onClick={() => setProgress(progress - 1)}>
-                            <img src={prev} alt="prev-btn" />
+                        ? <div className="prev__btn" onClick={() => {
+                                setProgress(progress - 1)
+                                document.documentElement.scrollTop = 0
+                                setLeftHover(false)
+                            }}
+                            onMouseOver={() => setLeftHover(true)}
+                            onMouseLeave={() => setLeftHover(false)}>
+                            <ArrowLeft bool={leftHover} />
                             <p>Назад</p>
                         </div>
-                        : <Link className="prev__btn" to="/briefing">
-                            <img src={prev} alt="prev-btn" />
+                        : <Link className="prev__btn" to="/briefing"
+                            onMouseOver={() => setLeftHover(true)}
+                            onMouseLeave={() => setLeftHover(false)}>
+                            <ArrowLeft bool={leftHover} />
                             <p>Назад</p>
                         </Link>
                     }
                     {progress !== 5 
-                        ? <div className="next__btn" onClick={() => setProgress(progress + 1)}>
+                        ? <div className="next__btn" onClick={() => {
+                                setProgress(progress + 1)
+                                setRightHover(false)
+                                document.documentElement.scrollTop = 0
+                            }}
+                            onMouseOver={() => setRightHover(true)}
+                            onMouseLeave={() => setRightHover(false)}>
                             <p>Следующий шаг</p>
-                            <img src={next} alt="next-btn" />
+                            <ArrowRight bool={rightHover} />
                         </div>
-                        : <Link className="next__btn" to={isValid ? "/finish" : "/questions"} onClick={() => setWarnMessage(true)}>
+                        : <Link className="next__btn" to={isValid ? "/finish" : "/questions"}
+                            onClick={() => setWarnMessage(true)}
+                            onMouseEnter={() => setRightHover(true)}
+                            onMouseLeave={() => setRightHover(false)}
+                            >
                             <p>Завершить</p>
-                            <img src={next} alt="next-btn" />
+                            <ArrowRight bool={rightHover} />
                         </Link>
                     }
                 </div>

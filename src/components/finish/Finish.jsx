@@ -1,9 +1,13 @@
 import './finish.scss'
 
+import DribbleIcon from './DribbleIcon'
+import BehanceIcon from './BehanceIcon'
+import FacebookIcon from './FacebookIcon'
+import InstagramIcon from './InstagramIcon'
+import TelegramIcon from './TelegramIcon'
+import VKIcon from './VKIcon'
+
 import logo from '../../assets/images/logo.png'
-import fbIcon from '../../assets/icons/vk-icon.png'
-import vkIcon from '../../assets/icons/fb-icon.png'
-import bbIcon from '../../assets/icons/bb-icon.png'
 
 const Finish = () => {
   return (
@@ -28,9 +32,12 @@ const Finish = () => {
           <h2>Наши контакты:</h2>
           <a href="mailto:public@easy-i.ru">public@easy-i.ru</a>
           <div className="icons">
-            <a href=""><img src={bbIcon} /></a>
-            <a href=""><img src={fbIcon} /></a>
-            <a href=""><img src={vkIcon} /></a>
+            <a href="#"><DribbleIcon /></a>
+            <a href="#"><BehanceIcon /></a>
+            <a href="#"><FacebookIcon /></a>
+            <a href="#"><InstagramIcon /></a>
+            <a href="#"><TelegramIcon /></a>
+            <a href="#"><VKIcon /></a>
           </div>
         </div>
       </div>

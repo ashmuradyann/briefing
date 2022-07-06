@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 130px 150px 160px 150px;
+    padding: 130px 100px;
     background-color: #3f6de2;
     color: #fff;
     background-image: url(../../assets/images/welcome-bg.png);
@@ -26,6 +26,7 @@
             font-size: 1.7rem;
             font-weight: 500;
             margin-left: 0;
+            color: #fff;
         }
 
         .welcome_logo_phones {
@@ -70,12 +71,19 @@
             }
 
             .start__button {
+                border: 3px solid #fff;
                 width: fit-content;
                 padding: 25px 80px;
                 background-color: #fff;
                 border-radius: 30px;
                 font-size: 1.7rem;
                 font-weight: 600;
+                transition: .2s;
+            }
+
+            .start__button:hover {
+                background-color: #3f6ee2;
+                color: #fff;
             }
 
             .feedbackInfo__wrapper {
@@ -111,7 +119,7 @@
 @media (max-width: 1920px) {
 
     .welcome__wrapper {
-        padding: 130px 120px;
+        padding: 80px 80px;
 
         h1 {
             font-size: 3rem !important;
@@ -139,18 +147,10 @@
 
 }
 
-@media (max-width: 1740px) {
-
-    .welcome__wrapper {
-        padding: 80px 130px 100px 130px;
-    }
-
-}
-
 @media (max-width: 1560px) {
 
     .welcome__wrapper {
-        padding: 100px 110px;
+        padding: 80px 60px;
         background-size: 50%;
 
         .welcome__container {

@@ -3,13 +3,13 @@
 
     label {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 500;
     }
-    
+
     .privacy {
         margin-bottom: 20px;
-        
+
         a {
             color: #3F6DE2;
         }
@@ -25,10 +25,12 @@
     width: 100%;
     display: flex;
 
-    .navigation__wrapper, .prev__btn, .next__btn {
+    .navigation__wrapper,
+    .prev__btn,
+    .next__btn {
         display: flex;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 600;
         text-transform: uppercase;
 
@@ -36,26 +38,44 @@
             width: 30px;
         }
 
-        .prev__btn, .next__btn {
+        .prev__btn,
+        .next__btn {
             margin-right: 30px;
             cursor: pointer;
         }
 
+        
         .prev__btn {
-            padding: 20px 40px;
+            padding: 17px 35px;
             border: 3px solid #3F6DE2;
             border-radius: 25px;
+            color: #75778A;
+            transition: .2s;
         }
         
         .next__btn {
-            padding: 23px 40px;
+            padding: 17px 35px;
+            border: 3px solid #3F6DE2;
             background-color: #3F6DE2;
             border-radius: 25px;
             color: #fff;
+            transition: .2s;
         }
-    
-        .prev__btn > *, .next__btn > * {
-            margin: 0 10px;
+
+        .prev__btn:hover {
+            color: #fff;
+            background-color: #3F6DE2;
+        }
+
+        .next__btn:hover {
+            color: #75778A;
+            border: 3px solid #3F6DE2;
+            background-color: #fff;
+        }
+
+        .prev__btn>*,
+        .next__btn>* {
+            margin: 0 5px;
         }
     }
 }
@@ -64,31 +84,25 @@
 
     .navbar {
         padding-top: 40px;
-    
+
         label {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
-        
+
         .privacy {
             margin-bottom: 20px;
         }
     }
 
     .navigation {
-    
-        .navigation__wrapper, .prev__btn, .next__btn {
-            font-size: 1.3rem;
-    
+
+        .navigation__wrapper,
+        .prev__btn,
+        .next__btn {
+            font-size: 1.1rem;
+
             img {
                 width: 30px;
-            }
-    
-            .prev__btn {
-                padding: 20px 40px;
-            }
-        
-            .next__btn {
-                padding: 23px 40px;
             }
         }
     }
@@ -98,52 +112,47 @@
 
     .navbar {
         padding-top: 60px;
-    
+
         label {
-            font-size: 1.3rem;
+            font-size: .9rem;
         }
-        
+
         .privacy {
             margin-bottom: 20px;
         }
     }
 
     .navigation {
-    
-        .navigation__wrapper, .prev__btn, .next__btn {
-            font-size: 1.3rem;
-    
+
+        .navigation__wrapper,
+        .prev__btn,
+        .next__btn {
+            font-size: .9rem;
+
             img {
                 width: 30px;
             }
-            
-            .prev__btn {
-                padding: 20px 40px;
-            }
-            
-            .next__btn {
-                padding: 23px 40px;
-            }
+        }
+
+        .prev__btn {
+            padding: 13px 35px !important;
+        }
+
+        .next__btn {
+            padding: 13px 35px !important;
         }
     }
 }
 
 @media (max-width: 1280px) {
     .navigation {
-    
-        .navigation__wrapper, .prev__btn, .next__btn {
-            font-size: 1.1rem;
-    
+
+        .navigation__wrapper,
+        .prev__btn,
+        .next__btn {
+
             img {
                 width: 30px;
-            }
-    
-            .prev__btn {
-                padding: 15px 35px;
-            }
-            
-            .next__btn {
-                padding: 18px 35px;
             }
         }
     }
@@ -151,21 +160,21 @@
 
 @media (max-width: 991px) {
     .navigation {
-        
-        .navigation__wrapper, .prev__btn, .next__btn {
+
+        .navigation__wrapper,
+        .prev__btn,
+        .next__btn {
             font-size: .9rem;
-    
+
             img {
                 width: 25px;
             }
-            
+
             .prev__btn {
-                padding: 10px 27px;
                 border-radius: 20px;
             }
-            
+
             .next__btn {
-                padding: 13px 27px;
                 border-radius: 20px;
             }
         }
@@ -177,29 +186,32 @@
         margin-top: 20px;
         padding: 0;
     }
+
     .navigation {
         margin-top: 20px;
         justify-content: center;
-        
+
         .navigation__wrapper {
             flex-direction: column;
             align-items: center;
         }
-        
-        .navigation__wrapper, .prev__btn, .next__btn {
+
+        .navigation__wrapper,
+        .prev__btn,
+        .next__btn {
             width: 70%;
             justify-content: center;
             font-size: 1rem;
-            
+
             img {
                 width: 25px;
             }
-            
+
             .prev__btn {
                 width: 330px;
                 margin-right: 0;
             }
-            
+
             .next__btn {
                 width: 330px;
                 margin-top: 15px;
@@ -213,25 +225,27 @@
     .navigation {
         margin-top: 20px;
         justify-content: center;
-        
+
         .navigation__wrapper {
             flex-direction: column;
             align-items: center;
         }
-        
-        .navigation__wrapper, .prev__btn, .next__btn {
+
+        .navigation__wrapper,
+        .prev__btn,
+        .next__btn {
             width: 100%;
             justify-content: center;
             font-size: .9rem;
-            
+
             img {
                 width: 25px;
             }
-            
+
             .prev__btn {
                 width: 100%;
             }
-            
+
             .next__btn {
                 width: 100%;
                 margin-top: 10px;

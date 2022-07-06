@@ -8,7 +8,7 @@ const Input = styled(input)`
   //border-radius: 50px;
   //height: 44px;
   height: 35px;
-  padding: 0 15px;
+  padding: 0;
   font-weight: 400;
 
   &:hover {
@@ -16,7 +16,7 @@ const Input = styled(input)`
   }
   &:focus,
   &.ant-input-focused {
-    border-color: #886cc0;
+    border-color: #000 !important;
     outline: 0;
     box-shadow: 0 0 0 4px #9dbaff;
   }

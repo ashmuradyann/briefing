@@ -11,6 +11,7 @@
 
     h1 {
         font-weight: 600;
+        font-size: 2rem;
     }
 
     .questions__container {
@@ -32,7 +33,7 @@
         padding: 70px 80px;
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
     }
 }
@@ -42,7 +43,7 @@
         padding: 70px 100px;
 
         h1 {
-            font-size: 1.7rem;
+            font-size: 1.4rem;
         }
     }
 }
@@ -53,7 +54,7 @@
         padding: 50px 70px;
 
         h1 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -63,7 +64,7 @@
         padding: 50px 40px;
 
         h1 {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 }
@@ -79,7 +80,7 @@
         h1 {
             order: 2;
             margin-top: 30px;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         .questions__container {
@@ -93,7 +94,6 @@
     
                     h2 {
                         margin: 0;
-                        color: #75778A;
                     }
     
                     .progress__wrapper {

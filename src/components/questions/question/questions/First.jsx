@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
+
 import './styles.scss'
+
 import Input from '../../../../styled-components/Input/index'
 
 const First = ({ setTitle, data, setData }) => {

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "GothamPro";
+  src: url("./assets/fonts/GothamPro/gothampro.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'GothamPro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
