@@ -4,6 +4,8 @@ import Progress from './progress/Progress'
 import QuestionPage from './question/QuestionPage'
 import Navigation from './navigation/Navigation'
 
+import logo from '../../assets/images/mini-logo.png'
+
 const Questions = () => {
 
   const [progress, setProgress] = useState(1)
@@ -34,7 +36,10 @@ const Questions = () => {
           <div className="questions__title">
             <h1>{title}</h1>
             <div className="progress">
-              <Progress progress={progress} />
+              <div>
+                <Progress progress={progress} />
+              </div>
+              <img src={logo} alt="logo" />
             </div>
           </div>
           <QuestionPage progress={progress} setTitle={setTitle} data={data} setData={setData} />

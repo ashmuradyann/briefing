@@ -24,6 +24,12 @@
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
+
+            .progress {
+                img {
+                    display: none;
+                }
+            }
         }
     }
 }
@@ -71,11 +77,8 @@
 
 @media (max-width: 640px) {
     .questions__wrapper {
+        background-image: none;
         padding: 35px 20px;
-        background-image: url(../../assets/images/mini-logo.png);
-        background-size: 30%;
-        background-position: 80% 5%;
-
 
         h1 {
             order: 2;
@@ -84,22 +87,32 @@
         }
 
         .questions__container {
-    
+
             .questions__title {
                 flex-direction: column;
-                
+
                 .progress {
-                    width: 50%;
+                    display: flex;
                     order: 1;
-    
+
+                    div {
+                        width: 70%;
+                    }
+
+                    img {
+                        display: block;
+                        width: 120px;
+                        height: 40px;
+                    }
+
                     h2 {
                         margin: 0;
                     }
-    
+
                     .progress__wrapper {
+                        margin-top: 5px;
                         display: flex;
-                        margin-bottom: 10px;
-    
+
                         .progress__bar {
                             margin-left: 0;
                             margin-right: 5px;
