@@ -7,9 +7,8 @@ import ArrowLeft from './ArrowLeft'
 
 import './navigation.scss'
 
-const Navigation = ({ progress, setProgress }) => {
+const Navigation = ({ progress, setProgress, onFinish, isValid, setIsValid }) => {
 
-    const [isValid, setIsValid] = useState(null)
     const [warnMessage, setWarnMessage] = useState(null)
     const [leftHover, setLeftHover] = useState(null)
     const [rightHover, setRightHover] = useState(null)
@@ -31,8 +30,8 @@ const Navigation = ({ progress, setProgress }) => {
                     {progress !== 1
                         ? <div className="prev__btn" onClick={() => {
                                 setProgress(progress - 1)
-                                document.documentElement.scrollTop = 0
                                 setLeftHover(false)
+                                document.documentElement.scrollTop = 0
                             }}
                             onMouseOver={() => setLeftHover(true)}
                             onMouseLeave={() => setLeftHover(false)}>
@@ -58,7 +57,10 @@ const Navigation = ({ progress, setProgress }) => {
                             <ArrowRight bool={rightHover} />
                         </div>
                         : <Link className="next__btn" to={isValid ? "/finish" : "/questions"}
-                            onClick={() => setWarnMessage(true)}
+                            onClick={() => {
+                                setWarnMessage(true)
+                                onFinish()
+                            }}
                             onMouseEnter={() => setRightHover(true)}
                             onMouseLeave={() => setRightHover(false)}
                             >
