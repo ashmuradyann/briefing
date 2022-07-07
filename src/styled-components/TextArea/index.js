@@ -21,7 +21,7 @@ const TextArea = styled(Input.TextArea)`
   }
   &:focus,
   &.ant-input-focused {
-    border-color: #75778A;
+    border-color: #000 !important;
     outline: 0;
     box-shadow: 0 0 0 4px #9dbaff;
   }
