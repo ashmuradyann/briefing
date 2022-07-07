@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, memo } from 'react'
 import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
 
 import './styles.scss'
@@ -42,4 +42,4 @@ const First = ({ setTitle, data, setData }) => {
     )
 }
 
-export default First
+export default memo(First)

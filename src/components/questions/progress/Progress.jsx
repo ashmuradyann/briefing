@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import ProgressBar from './ProgressBar'
 
 import './progress.scss'
@@ -11,4 +12,4 @@ const Progress = ({ progress }) => {
   )
 }
 
-export default Progress
+export default memo(Progress)

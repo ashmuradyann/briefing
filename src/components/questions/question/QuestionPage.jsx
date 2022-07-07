@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import First from "./questions/First"
 import Second from "./questions/Second"
 import Third from "./questions/Third"
@@ -23,4 +25,4 @@ const Question = ({ progress, setTitle, data, setData }) => {
 
 }
 
-export default Question
+export default memo(Question)

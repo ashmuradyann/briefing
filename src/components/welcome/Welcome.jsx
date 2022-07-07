@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import { Link } from 'react-router-dom'
 
 import './welcome.scss'
@@ -49,4 +49,4 @@ const Welcome = () => {
     )
 }
 
-export default Welcome
+export default memo(Welcome)

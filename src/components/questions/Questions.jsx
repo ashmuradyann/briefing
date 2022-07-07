@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import './questions.scss'
 import Progress from './progress/Progress'
 import QuestionPage from './question/QuestionPage'
@@ -80,4 +80,4 @@ const Questions = () => {
   )
 }
 
-export default Questions
+export default memo(Questions)

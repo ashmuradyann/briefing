@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, memo } from 'react'
 import TextArea from '../../../../styled-components/TextArea/index'
 
 const Third = ({ setTitle, data, setData }) => {
@@ -43,4 +43,4 @@ const Third = ({ setTitle, data, setData }) => {
     )
 }
 
-export default Third
+export default memo(Third)
