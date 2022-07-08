@@ -1,18 +1,23 @@
-import { useState, useEffect, memo } from 'react'
+import { useState, memo } from 'react'
 import { Link } from 'react-router-dom'
+import { useTransition, animated } from 'react-spring'
 
 import './welcome.scss'
 import logo from '../../assets/images/logo.png'
 import feedbackLogo from '../../assets/images/feedbackLogo.png'
 
 
-const Welcome = () => {
+const Welcome = ({ activeIndex, setActiveIndex }) => {
 
-    const [toggle, setToggle] = useState(null)
-
-    useEffect(() => {
-        setTimeout(() => setToggle((prevToggle) => !prevToggle), 5000);
-    }, [toggle])
+    const [toggle, set] = useState(false)
+    const transitions = useTransition(toggle, {
+        from: { position: 'absolute', opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        reverse: toggle,
+        delay: 2000,
+        onRest: () => set(!toggle),
+    })
 
     return (
         <div className="welcome__wrapper">
@@ -28,20 +33,40 @@ const Welcome = () => {
                 <div className="starting">
                     <div className="starting__text">
                         <h2>Чтобы познакомиться поближе, приглашаем заполнить короткую анкету. Это займет не более 15 – 20 минут!</h2>
-                        <Link className="start__button" to="/questions">НАЧАТЬ</Link>
+                        <Link className="start__button" to="/first" onClick={() => setActiveIndex(activeIndex + 1)}>НАЧАТЬ</Link>
                     </div>
                     <div className="feedbackInfo__wrapper">
-                        <div className="feedbackInfo">
-                            <img src={feedbackLogo} alt="feedbackLogo" />
-                            {toggle 
-                                ? <h3>Заполни анкету и мы свяжемся с тобой в течение 2-х дней!</h3> 
-                                : <h3>Тщательное заполнение
-                                    анкеты повышает шансы
-                                    успешного собеседования
-                                    на <span>40%</span>
-                                </h3>
-                            }
-                        </div>
+                        {transitions(({ opacity }, item) =>
+                            item ? (
+                                <animated.div
+                                    className="feedbackInfo"
+                                    style={{
+                                        position: 'absolute',
+                                        left: "65%",
+                                        right: "3%",
+                                        opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
+                                    }}>
+                                    <img src={feedbackLogo} alt="feedbackLogo" />
+                                    <h3>Заполни анкету и мы свяжемся с тобой в течение 2-х дней!</h3>
+                                </animated.div>
+                            ) : (
+                                <animated.div
+                                className="feedbackInfo"
+                                style={{
+                                        position: 'absolute',
+                                        left: "65%",
+                                        right: "3%",
+                                        opacity: opacity.to({ range: [1.0, 0.0], output: [1, 0] }),
+                                    }}>
+                                    <img src={feedbackLogo} alt="feedbackLogo" />
+                                    <h3>Тщательное заполнение
+                                        анкеты повышает шансы
+                                        успешного собеседования
+                                        на <span>40%</span>
+                                    </h3>
+                                </animated.div>
+                            )
+                        )}
                     </div>
                 </div>
             </div>

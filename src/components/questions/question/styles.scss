@@ -1,6 +1,7 @@
 .question__wrapper {
     font-weight: 600;
     font-size: 1.3rem;
+    margin-bottom: 5%;
 
     .input_name_wrapper {
         margin-top: 50px;
@@ -102,7 +103,7 @@
             min-width: 100%;
             max-width: 100%;
             font-size: 1.3rem;
-            background-image: url("../../../../assets/icons/Expand.svg");
+            background-image: url("../../../assets/icons/Expand.svg");
             background-repeat: no-repeat;
             background-position: 100% 100%;
         }

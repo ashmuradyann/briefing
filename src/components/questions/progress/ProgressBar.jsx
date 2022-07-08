@@ -1,8 +1,8 @@
 
 
-const ProgressBar = ({ progress }) => {
+const ProgressBar = ({ pathname }) => {
 
-    switch (progress) {
+    switch (pathname) {
         case 1:
             return (
                 <div className="progress__wrapper">

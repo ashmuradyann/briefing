@@ -1,11 +1,11 @@
 import './finish.scss'
 
-import DribbleIcon from './DribbleIcon'
-import BehanceIcon from './BehanceIcon'
-import FacebookIcon from './FacebookIcon'
-import InstagramIcon from './InstagramIcon'
-import TelegramIcon from './TelegramIcon'
-import VKIcon from './VKIcon'
+import DribbleIcon from './icons/DribbleIcon'
+import BehanceIcon from './icons/BehanceIcon'
+import FacebookIcon from './icons/FacebookIcon'
+import InstagramIcon from './icons/InstagramIcon'
+import TelegramIcon from './icons/TelegramIcon'
+import VKIcon from './icons/VKIcon'
 
 import logo from '../../assets/images/logo.png'
 
