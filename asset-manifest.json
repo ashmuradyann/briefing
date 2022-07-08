@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/briefing/static/css/main.7e85cc93.css",
+    "main.css": "/briefing/static/css/main.b17efdb6.css",
     "main.js": "/briefing/static/js/main.41ffa7fb.js",
     "static/media/bg-gray.png": "/briefing/static/media/bg-gray.2c12b2cadccd929f2ac6.png",
     "static/media/gothampro.ttf": "/briefing/static/media/gothampro.4f71921a0823129cd8ba.ttf",
@@ -9,11 +9,11 @@
     "static/media/logo.png": "/briefing/static/media/logo.e8c701d7c3f5f653a909.png",
     "index.html": "/briefing/index.html",
     "static/media/Expand.svg": "/briefing/static/media/Expand.6e75d5f34097e328c319.svg",
-    "main.7e85cc93.css.map": "/briefing/static/css/main.7e85cc93.css.map",
+    "main.b17efdb6.css.map": "/briefing/static/css/main.b17efdb6.css.map",
     "main.41ffa7fb.js.map": "/briefing/static/js/main.41ffa7fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e85cc93.css",
+    "static/css/main.b17efdb6.css",
     "static/js/main.41ffa7fb.js"
   ]
 }
