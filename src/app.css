@@ -1,11 +1,12 @@
 .slides {
     /* position: relative; */
-    overflow-x: hidden;
+    overflow: hidden;
     /* width: 100%; */
     min-height: 100vh;
 }
 
 .slide {
+    overflow-y: scroll;
     position: absolute;
     top: 0;
     left: 0;
