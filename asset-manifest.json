@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/briefing/static/css/main.d8ab5b55.css",
-    "main.js": "/briefing/static/js/main.4ca38530.js",
+    "main.css": "/briefing/static/css/main.988950e2.css",
+    "main.js": "/briefing/static/js/main.41cbde7c.js",
     "static/media/bg-gray.png": "/briefing/static/media/bg-gray.2c12b2cadccd929f2ac6.png",
     "static/media/gothampro.ttf": "/briefing/static/media/gothampro.4f71921a0823129cd8ba.ttf",
     "static/media/welcome-bg.png": "/briefing/static/media/welcome-bg.19418be27c5f873a0e32.png",
     "static/media/finish-bg.png": "/briefing/static/media/finish-bg.d8c7506a0005ebfa6788.png",
     "static/media/logo.png": "/briefing/static/media/logo.e8c701d7c3f5f653a909.png",
     "index.html": "/briefing/index.html",
+    "static/media/Close.svg": "/briefing/static/media/Close.1f99bcda809b3cd95ed30f7fd0ec60e1.svg",
     "static/media/Expand.svg": "/briefing/static/media/Expand.6e75d5f34097e328c319.svg",
-    "main.d8ab5b55.css.map": "/briefing/static/css/main.d8ab5b55.css.map",
-    "main.4ca38530.js.map": "/briefing/static/js/main.4ca38530.js.map"
+    "main.988950e2.css.map": "/briefing/static/css/main.988950e2.css.map",
+    "main.41cbde7c.js.map": "/briefing/static/js/main.41cbde7c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8ab5b55.css",
-    "static/js/main.4ca38530.js"
+    "static/css/main.988950e2.css",
+    "static/js/main.41cbde7c.js"
   ]
 }
