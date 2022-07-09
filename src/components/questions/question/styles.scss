@@ -5,7 +5,7 @@
     .input_name_wrapper {
         margin-top: 50px;
 
-        input {
+        input[type="text"] {
             border: 3px solid #75778A;
             border-radius: 10px;
             width: 500px;
@@ -14,7 +14,24 @@
             font-size: 1.3rem;
             color: #75778A;
             font-weight: 300;
+            padding-right: 50px;
         }
+        
+        // img {
+        //     outline: 5px solid #fff;
+        //     width: 30px;
+        //     height: 30px;
+        //     margin-left: -75px;
+        //     transition: .2s;
+        //     border-radius: 50%;
+        //     cursor: pointer;
+        //     pointer-events: none;
+        // }
+        
+        // img:hover {
+        //     background-color: #dedede;
+        //     outline: 5px solid #dedede;
+        // }
 
         // .ant-input-affix-wrapper {
         //     border: none;
@@ -46,6 +63,22 @@
             margin-right: 30px;
         }
 
+    }
+
+    img {
+        outline: 5px solid #fff;
+        width: 30px;
+        height: 30px;
+        margin-left: -75px;
+        transition: .2s;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: none;
+    }
+    
+    img:hover {
+        background-color: #dedede;
+        outline: 5px solid #dedede;
     }
 
     .input_radio_wrapper {
@@ -80,6 +113,11 @@
             font-size: 1.3rem;
             color: #75778A;
             font-weight: 300;
+            padding-right: 50px;
+        }
+
+        img {
+            margin-top: 15px;
         }
 
         p,

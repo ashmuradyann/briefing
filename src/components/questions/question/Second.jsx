@@ -3,6 +3,8 @@ import { memo } from "react"
 import TextArea from '../../../styled-components/TextArea/index'
 import Navigation from "../navigation/Navigation"
 
+import closeSvg from '../../../assets/icons/Close.svg'
+
 import './styles.scss'
 
 const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setActiveIndex }) => {
@@ -15,6 +17,7 @@ const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, set
                         <label>В каких проектах вы участвовали?</label>
                         <div>
                             <TextArea value={data.participated} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, participated: e.target.value })} />
+                            <img style={data.participated.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, participated: ""})}src={closeSvg} alt="closeBtn" />
                             <p>Расскажите о своём опыте: Какой проект показался вам самым интересным? Чем он так запомнился?</p>
                         </div>
                     </div>
@@ -22,6 +25,7 @@ const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, set
                         <label>Неудачи в работе</label>
                         <div>
                             <TextArea value={data.failures} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, failures: e.target.value })} />
+                            <img style={data.failures.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, failures: ""})}src={closeSvg} alt="closeBtn" />
                             <p>А что на счет неудачных проектов? Какой самый серьёзный провал случался в вашей практике?</p>
                         </div>
                     </div>
@@ -29,6 +33,7 @@ const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, set
                         <label>Есть ли у вас собственные проекты?</label>
                         <div>
                             <TextArea value={data.ownProjects} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, ownProjects: e.target.value })} />
+                            <img style={data.ownProjects.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, ownProjects: ""})}src={closeSvg} alt="closeBtn" />
                             <p>Блог, сервис, личная раскрученная страница?</p>
                         </div>
                     </div>

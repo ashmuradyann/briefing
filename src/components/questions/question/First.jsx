@@ -4,6 +4,8 @@ import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
 import Navigation from '../navigation/Navigation'
 import Input from '../../../styled-components/Input/index'
 
+import closeSvg from '../../../assets/icons/Close.svg'
+
 import './styles.scss'
 
 const First = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setActiveIndex }) => {
@@ -18,6 +20,7 @@ const First = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setA
                         <label>Как вас зовут?</label>
                         <div>
                             <Input value={data.name} placeholder="напр. Владимир Иванов" onChange={(e) => setData({ ...data, name: e.target.value })} />
+                            <img style={data.name.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, name: ""})}src={closeSvg} alt="closeBtn" />
                             <p>Достаточно имени и фамилии</p>
                         </div>
                     </div>
