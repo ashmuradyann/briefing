@@ -3,7 +3,7 @@ import { Input as input } from 'antd';
 
 const Input = styled(input)`
   background: #fff;
-  border: 1px solid #eeeeee;
+  // border: 1px solid #eeeeee;
   box-sizing: border-box;
   //border-radius: 50px;
   //height: 44px;

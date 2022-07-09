@@ -16,7 +16,7 @@ const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, set
                     <div className="input_textarea_wrapper">
                         <label>В каких проектах вы участвовали?</label>
                         <div>
-                            <TextArea value={data.participated} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, participated: e.target.value })} />
+                            <TextArea value={data.participated} style={data.participated.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, participated: e.target.value })} />
                             <img style={data.participated.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, participated: ""})}src={closeSvg} alt="closeBtn" />
                             <p>Расскажите о своём опыте: Какой проект показался вам самым интересным? Чем он так запомнился?</p>
                         </div>
@@ -24,7 +24,7 @@ const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, set
                     <div className="input_textarea_wrapper">
                         <label>Неудачи в работе</label>
                         <div>
-                            <TextArea value={data.failures} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, failures: e.target.value })} />
+                            <TextArea value={data.failures} style={data.failures.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, failures: e.target.value })} />
                             <img style={data.failures.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, failures: ""})}src={closeSvg} alt="closeBtn" />
                             <p>А что на счет неудачных проектов? Какой самый серьёзный провал случался в вашей практике?</p>
                         </div>
@@ -32,7 +32,7 @@ const Second = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, set
                     <div className="input_textarea_wrapper">
                         <label>Есть ли у вас собственные проекты?</label>
                         <div>
-                            <TextArea value={data.ownProjects} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, ownProjects: e.target.value })} />
+                            <TextArea value={data.ownProjects} style={data.ownProjects.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" border="3px solid" onChange={(e) => setData({ ...data, ownProjects: e.target.value })} />
                             <img style={data.ownProjects.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, ownProjects: ""})}src={closeSvg} alt="closeBtn" />
                             <p>Блог, сервис, личная раскрученная страница?</p>
                         </div>

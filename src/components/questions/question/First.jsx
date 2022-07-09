@@ -19,7 +19,7 @@ const First = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setA
                     <div className="input_name_wrapper">
                         <label>Как вас зовут?</label>
                         <div>
-                            <Input value={data.name} placeholder="напр. Владимир Иванов" onChange={(e) => setData({ ...data, name: e.target.value })} />
+                            <Input value={data.name} style={data.name.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="напр. Владимир Иванов" onChange={(e) => setData({ ...data, name: e.target.value })} />
                             <img style={data.name.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, name: ""})}src={closeSvg} alt="closeBtn" />
                             <p>Достаточно имени и фамилии</p>
                         </div>

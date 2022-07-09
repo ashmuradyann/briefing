@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 120px 140px 120px 100px;
+    padding: 80px 100px;
     background-image: url(../../assets/images/bg-gray.png), url(../../assets/images/mini-logo.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,6 +21,7 @@
 
         .questions__title {
             padding: 10px 0;
+            margin-bottom: 50px;
             display: flex;
             justify-content: space-between;
 
@@ -40,6 +41,12 @@
 
         h1 {
             font-size: 1.7rem;
+        }
+
+        .questions__container {
+            .questions__title {
+                margin-bottom: 30px;
+            }
         }
     }
 }
@@ -78,7 +85,7 @@
 @media (max-width: 640px) {
     .questions__wrapper {
         background-image: none;
-        padding: 35px 20px;
+        padding: 35px 20px 100px 20px;
 
         h1 {
             order: 2;
