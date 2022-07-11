@@ -3,12 +3,20 @@ import { Input } from 'antd';
 
 const TextArea = styled(Input.TextArea)`
   background: #ffffff;
-  border: 3px solid #75778A;
+  border: 2px solid #75778A;
   box-sizing: border-box;
   border-radius: 10px;
   height: 150px;
-  padding: 15px;
+  padding: 10px 50px 10px 10px;
   font-weight: 300;
+
+  &:after {
+    content: attr(length);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &::placeholder {
     color: #D9DBE9;

@@ -8,6 +8,7 @@ const Input = styled(input)`
   //border-radius: 50px;
   //height: 44px;
   height: 35px;
+  color: #14142B;
   padding: 0;
   font-weight: 400;
 
@@ -18,7 +19,7 @@ const Input = styled(input)`
   &.ant-input-focused {
     border-color: #000 !important;
     outline: 0;
-    box-shadow: 0 0 0 4px #9dbaff;
+    box-shadow: 0 0 0 3px #9dbaff;
   }
 
   &[disabled] {

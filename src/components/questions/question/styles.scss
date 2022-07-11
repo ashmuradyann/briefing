@@ -5,13 +5,13 @@
     .input_name_wrapper {
 
         input[type="text"] {
-            border: 3px solid #75778A;
+            border: 2px solid #75778A;
             border-radius: 10px;
             width: 500px;
             height: 60px;
             padding: 5px 15px;
             font-size: 1.3rem;
-            color: #75778A;
+            color: #14142B;
             font-weight: 300;
             padding-right: 50px;
         }
@@ -52,8 +52,112 @@
         outline: 5px solid #dedede;
     }
 
+    .input_select_wrapper {
+        margin-top: 30px;
+
+        select {
+            margin-top: 20px;
+            border: 2px solid #75778A;
+            width: 500px;
+            height: 60px;
+            border-radius: 10px;
+            padding: 0 10px;
+            font-size: 1.3rem;
+        }
+
+        select::after {
+            display: none;
+        }
+
+        select:focus {
+            border: 2px solid #14142B;
+            outline: 3px solid #9dbaff;
+        }
+
+        select * {
+            padding: 10px 10px;
+            margin: 10px 0;
+            color: #75778A;
+        }
+    }
+
+    .input_checkbox_wrapper {
+        margin-top: 20px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .fake {
+            position: relative;
+            border: 2px solid #75778A;
+            border-radius: 7px;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .fake::before {
+            content: "";
+            border: 1px solid #14142B;
+            width: 11px;
+            border-radius: 1px;
+            background-color: #14142B;
+            position: absolute;
+            top: 50%;
+            left: 62%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            display: block;
+            opacity: 0;
+            transition: .2s;
+        }
+
+        .fake::after {
+            content: "";
+            border: 1px solid #14142B;
+            width: 6px;
+            border-radius: 1px;
+            background-color: #14142B;
+            position: absolute;
+            top: 58%;
+            left: 32%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            display: block;
+            opacity: 0;
+            transition: .2s;
+        }
+
+        input[type="checkbox"]:checked+.fake::after {
+            opacity: 1;
+        }
+
+        input[type="checkbox"]:checked+.fake::before {
+            opacity: 1;
+        }
+
+        input[type="checkbox"]:checked+.fake {
+            border-color: #14142B;
+        }
+
+    }
+
     .input_radio_wrapper {
-        margin-top: 70px;
+        margin-top: 30px;
 
         div {
             margin-top: 10px;
@@ -73,18 +177,16 @@
     }
 
     .input_textarea_wrapper {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 
         input {
-            border: 3px solid #75778A;
+            border: 2px solid #75778A;
             border-radius: 10px;
             width: 500px;
             height: 60px;
-            padding: 5px 15px;
             font-size: 1.3rem;
             color: #75778A;
             font-weight: 300;
-            // padding-right: 50px;
         }
 
         img {
@@ -124,6 +226,11 @@
         ::-webkit-resizer {
             display: none;
         }
+
+        .length {
+            color: #75778A;
+            font-size: 1rem;
+        }
     }
 }
 
@@ -141,8 +248,15 @@
             }
         }
 
+        .input_checkbox_wrapper {
+            div {
+                label {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
         .input_radio_wrapper {
-            margin-top: 20px;
 
             .MuiSvgIcon-root {
                 font-size: 1.8rem;
@@ -190,7 +304,6 @@
         }
 
         .input_radio_wrapper {
-            margin-top: 60px;
 
             .MuiSvgIcon-root {
                 font-size: 1.6rem;
@@ -291,6 +404,14 @@
             img {
                 width: 20px;
                 height: 20px;
+            }
+        }
+
+        .input_checkbox_wrapper {
+            div {
+                label {
+                    font-size: .8rem;
+                }
             }
         }
 

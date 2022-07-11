@@ -8,7 +8,12 @@ import closeSvg from '../../../assets/icons/Close.svg'
 
 import './styles.scss'
 
-const First = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setActiveIndex }) => {
+const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activeIndex, setActiveIndex }) => {
+
+    const handleChange = (event) => {
+        const { name, value } = event.target
+        setData({ ...data, [name]: value })
+    }
 
     const radios = ["PR специалист", "SMM менеджер, маркетолог", "Веб-мастер", "Руководитель отдела продаж", "Frontend-разработчик"]
 
@@ -19,15 +24,54 @@ const First = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setA
                     <div className="input_name_wrapper">
                         <label>Как вас зовут?</label>
                         <div>
-                            <Input value={data.name} style={data.name.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="напр. Владимир Иванов" onChange={(e) => setData({ ...data, name: e.target.value })} />
-                            <img style={data.name.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, name: ""})}src={closeSvg} alt="closeBtn" />
+                            <Input value={data.name} name="name" style={data.name.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="напр. Владимир Иванов" onChange={handleChange} />
+                            <img style={data.name.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} onClick={() => setData({ ...data, name: "" })} src={closeSvg} alt="closeBtn" />
                             <p>Достаточно имени и фамилии</p>
+                        </div>
+                    </div>
+                    <div className="input_name_wrapper" style={{ marginTop: "10px" }}>
+                        <label>Ваш адрес электронной почты</label>
+                        <div>
+                            <Input value={data.email} name="email" style={data.email.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="your@email.ru" onChange={handleChange} />
+                            <img style={data.email.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} onClick={() => setData({ ...data, email: "" })} src={closeSvg} alt="closeBtn" />
+                            <p>Google, Mail, Yandex, Yahoo</p>
+                        </div>
+                    </div>
+                    <div className="input_name_wrapper" style={{ marginTop: "10px" }}>
+                        <label>Номер телефона</label>
+                        <div>
+                            <Input value={data.phoneNumber} name="phoneNumber" style={data.phoneNumber.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="+7 XXX XXX XX XX" onChange={handleChange} />
+                            <img style={data.phoneNumber.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} onClick={() => setData({ ...data, phoneNumber: "" })} src={closeSvg} alt="closeBtn" />
+                            <p>Номер вашего телефона</p>
+                        </div>
+                    </div>
+                    <div className="input_checkbox_wrapper">
+                        <label>Какая должность интересует?</label>
+                        <div>
+                            {radios.map((el, i) => (
+                                <label>
+                                    <input type="checkbox" onChange={(e) => setData({ ...data, jobTypeCheckbox: { ...data.jobTypeCheckbox, [el]: e.target.value } })} />
+                                    <span className="fake"></span>
+                                    <span>{el}</span>
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="input_select_wrapper">
+                        <label>Какая должность интересует?</label>
+                        <div>
+                            <select>
+                                <option disabled selected>выберите должность</option>
+                                {radios.map((el, i) => (
+                                    <option>{el}</option>
+                                ))}
+                            </select>
                         </div>
                     </div>
                     <div className="input_radio_wrapper">
                         <label>Какая должность интересует?</label>
                         <div>
-                            <RadioGroup onChange={(e) => { setData({ ...data, jobType: e.target.value }) }}>
+                            <RadioGroup name="jobType" onChange={handleChange}>
                                 {radios.map((el, i) => (
                                     <FormControlLabel key={i} value={el} control={<Radio sx={{
                                         '& .MuiSvgIcon-root': {
@@ -41,10 +85,10 @@ const First = ({ data, setData, isValid, setIsValid, onFinish, activeIndex, setA
                 </div>
             </div>
             <Navigation
-                positions={{left: "/briefing", right: "/second"}}
+                positions={{ left: "/briefing", right: "/second" }}
                 data={data}
-                isValid={isValid}
-                setIsValid={setIsValid}
+                checkboxValid={checkboxValid}
+                setCheckboxValid={setCheckboxValid}
                 onFinish={onFinish}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex} />

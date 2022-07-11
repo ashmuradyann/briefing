@@ -1,5 +1,5 @@
 .navbar {
-    margin-top: 20px;
+    margin-top: 40px;
 
     label {
         font-family: 'Montserrat', sans-serif;
@@ -83,7 +83,6 @@
 @media (max-width: 1920px) {
 
     .navbar {
-
         label {
             font-size: 1.1rem;
         }
@@ -110,7 +109,6 @@
 @media (max-width: 1550px) {
 
     .navbar {
-        padding-top: 60px;
 
         label {
             font-size: .9rem;
@@ -182,7 +180,6 @@
 
 @media (max-width: 640px) {
     .navbar {
-        margin-top: 20px;
         padding: 0;
     }
 
@@ -222,7 +219,6 @@
 
 @media (max-width: 360px) {
     .navigation {
-        margin-top: 20px;
         justify-content: center;
 
         .navigation__wrapper {

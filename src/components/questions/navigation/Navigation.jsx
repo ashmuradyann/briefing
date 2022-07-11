@@ -7,7 +7,7 @@ import ArrowLeft from './ArrowLeft'
 
 import './navigation.scss'
 
-const Navigation = ({ positions, onFinish, isValid, setIsValid, activeIndex, setActiveIndex }) => {
+const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid, activeIndex, setActiveIndex }) => {
 
     const location = useLocation()
 
@@ -20,17 +20,17 @@ const Navigation = ({ positions, onFinish, isValid, setIsValid, activeIndex, set
             {location.pathname === "/fifth"
                 ? <div className="privacy">
                     <FormControlLabel
-                        onChange={() => setIsValid(!isValid)}
-                        control={<Checkbox checked={isValid} />}
+                        onChange={() => setCheckboxValid(!checkboxValid)}
+                        control={<Checkbox checked={checkboxValid} />}
                         label={
                             <label>
-                                Я принимаю 
+                                Я принимаю
                                 <a href="#">
                                     Условия конфиденциальности и обработки персональных данных.
                                 </a>
                             </label>}
                     />
-                    {warnMessage && !isValid ? <p>Подвердите действие!</p> : null}
+                    {warnMessage && !checkboxValid ? <p>Подвердите действие!</p> : null}
                 </div>
                 : null}
             <div className="navigation">
@@ -46,7 +46,15 @@ const Navigation = ({ positions, onFinish, isValid, setIsValid, activeIndex, set
                         <ArrowLeft bool={leftHover} />
                         <p>Назад</p>
                     </Link>
-                    <Link style={isValid !== true && location.pathname === "/fifth" ? {pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede"} : null} className="next__btn" to={positions.right}
+                    <Link style={data.name.length !== 0
+                        && data.email.length !== 0
+                        && data.phoneNumber.length !== 0
+                        && data.jobType.length !== 0
+                        ? checkboxValid !== true && location.pathname === "/fifth"
+                            ? { pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede" }
+                            : null
+                        : { pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede" }}
+                        className="next__btn" to={positions.right}
                         onClick={() => {
                             if (location.pathname === "/fifth") {
                                 setWarnMessage(true)

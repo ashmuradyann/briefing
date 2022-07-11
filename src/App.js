@@ -18,9 +18,18 @@ function App() {
 
   const prevIndexRef = useRef(-1)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [isValid, setIsValid] = useState(false)
+  const [checkboxValid, setCheckboxValid] = useState(false)
   const [data, setData] = useState({
     name: "",
+    email: "",
+    phoneNumber: "",
+    jobTypeCheckbox: {
+      "PR специалист": "off",
+      "SMM менеджер, маркетолог": "off",
+      "Веб-мастер": "off",
+      "Руководитель отдела продаж": "off",
+      "Frontend-разработчик": "off"
+    },
     jobType: "",
     participated: "",
     failures: "",
@@ -39,9 +48,11 @@ function App() {
   })
 
   const onFinish = () => {
-    if (isValid) {
+    if (checkboxValid) {
       console.log({
         "имя": data.name,
+        "email": data.email,
+        "должности": data.jobTypeCheckbox,
         "должность": data.jobType,
         "проекты в которых участвовал(а)": data.participated,
         "неудачи": data.failures,
@@ -91,8 +102,8 @@ function App() {
               <Route path="/first" element={<First
                 data={data}
                 setData={setData}
-                isValid={isValid}
-                setIsValid={setIsValid}
+                checkboxValid={checkboxValid}
+                setCheckboxValid={setCheckboxValid}
                 onFinish={onFinish}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex} />} />
@@ -101,8 +112,8 @@ function App() {
               <Route path="/second" element={<Second
                 data={data}
                 setData={setData}
-                isValid={isValid}
-                setIsValid={setIsValid}
+                checkboxValid={checkboxValid}
+                setCheckboxValid={setCheckboxValid}
                 onFinish={onFinish}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex} />} />
@@ -111,8 +122,8 @@ function App() {
               <Route path="/third" element={<Third
                 data={data}
                 setData={setData}
-                isValid={isValid}
-                setIsValid={setIsValid}
+                checkboxValid={checkboxValid}
+                setCheckboxValid={setCheckboxValid}
                 onFinish={onFinish}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex} />} />
@@ -121,8 +132,8 @@ function App() {
               <Route path="/fourth" element={<Fourth
                 data={data}
                 setData={setData}
-                isValid={isValid}
-                setIsValid={setIsValid}
+                checkboxValid={checkboxValid}
+                setCheckboxValid={setCheckboxValid}
                 onFinish={onFinish}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex} />} />
@@ -131,8 +142,8 @@ function App() {
               <Route path="/fifth" element={<Fifth
                 data={data}
                 setData={setData}
-                isValid={isValid}
-                setIsValid={setIsValid}
+                checkboxValid={checkboxValid}
+                setCheckboxValid={setCheckboxValid}
                 onFinish={onFinish}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex} />} />
