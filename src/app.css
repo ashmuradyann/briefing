@@ -1,5 +1,4 @@
 .slides {
-    /* position: relative; */
     overflow-x: hidden;
     min-height: 100vh;
 }
@@ -9,4 +8,8 @@
     top: 0;
     left: 0;
     width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
