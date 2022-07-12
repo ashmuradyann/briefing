@@ -22,7 +22,6 @@
 
         .questions__title {
             padding: 10px 0;
-            margin-bottom: 50px;
             display: flex;
             justify-content: space-between;
 
@@ -42,12 +41,6 @@
 
         h1 {
             font-size: 1.7rem;
-        }
-
-        .questions__container {
-            .questions__title {
-                margin-bottom: 30px;
-            }
         }
     }
 }

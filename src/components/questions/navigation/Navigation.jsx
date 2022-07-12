@@ -1,13 +1,12 @@
 import { useState, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FormControlLabel, Checkbox } from '@mui/material'
 
 import ArrowRight from './ArrowRight'
 import ArrowLeft from './ArrowLeft'
 
 import './navigation.scss'
 
-const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid, activeIndex, setActiveIndex }) => {
+const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid, activeIndex, setActiveIndex, emailWarnMessage, phoneNumberWarnMessage }) => {
 
     const location = useLocation()
 
@@ -19,17 +18,18 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
         <div className="navbar">
             {location.pathname === "/fifth"
                 ? <div className="privacy">
-                    <FormControlLabel
-                        onChange={() => setCheckboxValid(!checkboxValid)}
-                        control={<Checkbox checked={checkboxValid} />}
-                        label={
-                            <label>
-                                Я принимаю
+                    <div>
+                        <label>
+                            <input type="checkbox" onChange={(e) => setCheckboxValid(!checkboxValid)} />
+                            <span className="fake"></span>
+                            <span>
+                                Я принимаю &nbsp;
                                 <a href="#">
                                     Условия конфиденциальности и обработки персональных данных.
                                 </a>
-                            </label>}
-                    />
+                            </span>
+                        </label>
+                    </div>
                     {warnMessage && !checkboxValid ? <p>Подвердите действие!</p> : null}
                 </div>
                 : null}
@@ -48,7 +48,9 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
                     </Link>
                     <Link style={data.name.length !== 0
                         && data.email.length !== 0
+                        && !warnMessage
                         && data.phoneNumber.length !== 0
+                        && !phoneNumberWarnMessage
                         && data.jobType.length !== 0
                         ? checkboxValid !== true && location.pathname === "/fifth"
                             ? { pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede" }

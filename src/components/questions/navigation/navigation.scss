@@ -1,5 +1,4 @@
 .navbar {
-    margin-top: 40px;
 
     label {
         font-family: 'Montserrat', sans-serif;
@@ -8,7 +7,77 @@
     }
 
     .privacy {
-        margin-bottom: 20px;
+        margin-top: 40px;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                display: flex;
+                align-items: center;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.3rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .fake {
+            position: relative;
+            border: 2px solid #75778A;
+            border-radius: 7px;
+            min-width: 26px;
+            min-height: 25px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .fake::before {
+            content: "";
+            border: 1.1px solid #14142B;
+            width: 11px;
+            border-radius: 1px;
+            background-color: #14142B;
+            position: absolute;
+            top: 50%;
+            left: 62%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            display: block;
+            opacity: 0;
+            transition: .2s;
+        }
+
+        .fake::after {
+            content: "";
+            border: 1.1px solid #14142B;
+            width: 6px;
+            border-radius: 1px;
+            background-color: #14142B;
+            position: absolute;
+            top: 58%;
+            left: 32%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            display: block;
+            opacity: 0;
+            transition: .2s;
+        }
+
+        input[type="checkbox"]:checked+.fake::after {
+            opacity: 1;
+        }
+
+        input[type="checkbox"]:checked+.fake::before {
+            opacity: 1;
+        }
+
+        input[type="checkbox"]:checked+.fake {
+            border-color: #14142B;
+        }
 
         a {
             color: #3F6DE2;
@@ -22,6 +91,7 @@
 }
 
 .navigation {
+    margin-top: 50px;
     width: 100%;
     display: flex;
 

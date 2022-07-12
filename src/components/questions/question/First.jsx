@@ -1,5 +1,7 @@
-import { memo } from 'react'
+import { useState, memo } from 'react'
 import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
+
+import Validator from 'email-validator'
 
 import Navigation from '../navigation/Navigation'
 import Input from '../../../styled-components/Input/index'
@@ -10,9 +12,34 @@ import './styles.scss'
 
 const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activeIndex, setActiveIndex }) => {
 
+    const [emailWarnMessage, setEmailWarnMessage] = useState(null)
+    const [phoneNumberWarnMessage, setPhoneNumberWarnMessage] = useState(null)
+
     const handleChange = (event) => {
         const { name, value } = event.target
         setData({ ...data, [name]: value })
+    }
+    
+    const phoneNumberHandleChange = (event) => {
+        if(event.target.value.length !== 13) {
+            setData({...data, phoneNumber: "+7" + event.target.value.replaceAll("+7", "").replace(/[^+\d]/g, '')})
+        }
+        setTimeout(() => {
+            if(event.target.value.length < 12) {
+                setPhoneNumberWarnMessage(true)
+            }
+        }, 1000)
+        setPhoneNumberWarnMessage(false)
+    }
+
+    const emailHandleChange = (event) => {
+            setData({...data, email: event.target.value})
+            setTimeout(() => {
+                if(!Validator.validate(event.target.value) && event.target.value.length !== 0) {
+                    setEmailWarnMessage(true)
+                }
+            }, 1000)
+            setEmailWarnMessage(false)
     }
 
     const radios = ["PR специалист", "SMM менеджер, маркетолог", "Веб-мастер", "Руководитель отдела продаж", "Frontend-разработчик"]
@@ -32,18 +59,20 @@ const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
                     <div className="input_name_wrapper" style={{ marginTop: "10px" }}>
                         <label>Ваш адрес электронной почты</label>
                         <div>
-                            <Input value={data.email} name="email" style={data.email.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="your@email.ru" onChange={handleChange} />
+                            <Input value={data.email} style={data.email.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="your@email.ru" name="email" onChange={emailHandleChange}/>
                             <img style={data.email.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} onClick={() => setData({ ...data, email: "" })} src={closeSvg} alt="closeBtn" />
                             <p>Google, Mail, Yandex, Yahoo</p>
                         </div>
+                        {emailWarnMessage ? <p style={{color: "#ff0000"}}>Неверный адрес электронной почты</p> : null}
                     </div>
                     <div className="input_name_wrapper" style={{ marginTop: "10px" }}>
                         <label>Номер телефона</label>
                         <div>
-                            <Input value={data.phoneNumber} name="phoneNumber" style={data.phoneNumber.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="+7 XXX XXX XX XX" onChange={handleChange} />
+                            <Input value={data.phoneNumber !== "+7" ? data.phoneNumber : ""} name="phoneNumber" style={data.phoneNumber.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="+7 XXX XXX XX XX" onChange={phoneNumberHandleChange} />
                             <img style={data.phoneNumber.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} onClick={() => setData({ ...data, phoneNumber: "" })} src={closeSvg} alt="closeBtn" />
                             <p>Номер вашего телефона</p>
                         </div>
+                        {phoneNumberWarnMessage ? <p style={{color: "#ff0000"}}>Неверный номер телефона</p> : null}
                     </div>
                     <div className="input_checkbox_wrapper">
                         <label>Какая должность интересует?</label>
@@ -66,6 +95,28 @@ const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
                                     <option>{el}</option>
                                 ))}
                             </select>
+                            {/* <Select
+                                defaultValue="выберите должность"
+                                className="select"
+                                style={{
+                                    border: "2px solid #75778A",
+                                    width: 500,
+                                    height: "60px"
+                                }}
+                                onChange={handleChange}
+                            >
+                                {radios.map((el, i) => (
+                                    <Option style={{border: "2px solid #75778A"}} key={i}>{el}</Option>
+                                ))}
+                            </Select> */}
+                            {/* <div className="select">
+                                <input value={data.jobTypeSelected} onFocus={() => setSelectStyle(true)} onBlur={() => setSelectStyle(false)} className="options" readonly={true} />
+                                <div className="option">
+                                    {radios.map((el, i) => (
+                                        <div key={i} className="option">{el}</div>
+                                    ))}
+                                </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="input_radio_wrapper">
@@ -85,6 +136,8 @@ const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
                 </div>
             </div>
             <Navigation
+                phoneNumberWarnMessage={phoneNumberWarnMessage}
+                emailWarnMessage={emailWarnMessage}
                 positions={{ left: "/briefing", right: "/second" }}
                 data={data}
                 checkboxValid={checkboxValid}

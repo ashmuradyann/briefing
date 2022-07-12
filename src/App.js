@@ -30,6 +30,7 @@ function App() {
       "Руководитель отдела продаж": "off",
       "Frontend-разработчик": "off"
     },
+    jobTypeSelected: "выберите должность",
     jobType: "",
     participated: "",
     failures: "",
