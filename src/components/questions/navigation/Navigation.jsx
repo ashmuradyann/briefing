@@ -1,4 +1,4 @@
-import { useState, memo } from 'react'
+import { useState, memo, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import ArrowRight from './ArrowRight'
@@ -13,6 +13,10 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
     const [warnMessage, setWarnMessage] = useState(null)
     const [leftHover, setLeftHover] = useState(null)
     const [rightHover, setRightHover] = useState(null)
+
+    useEffect(() => {
+        setCheckboxValid(false)
+    }, [])
 
     return (
         <div className="navbar">
@@ -48,7 +52,7 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
                     </Link>
                     <Link style={data.name.length !== 0
                         && data.email.length !== 0
-                        && !warnMessage
+                        && !emailWarnMessage
                         && data.phoneNumber.length !== 0
                         && !phoneNumberWarnMessage
                         && data.jobType.length !== 0

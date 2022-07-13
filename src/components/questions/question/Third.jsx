@@ -11,7 +11,7 @@ const Third = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
 
     const handleChange = (event) => {
         const { name, value } = event.target
-        if (value.length <= 150) {
+        if (value.length <= 250) {
             setData({...data, [name]: value})
         }
     }
