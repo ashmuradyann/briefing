@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/briefing/static/css/main.882e084f.css",
-    "main.js": "/briefing/static/js/main.601ddccc.js",
+    "main.js": "/briefing/static/js/main.f616fcf4.js",
     "static/media/bg-gray.png": "/briefing/static/media/bg-gray.2c12b2cadccd929f2ac6.png",
     "static/media/gothampro.ttf": "/briefing/static/media/gothampro.4f71921a0823129cd8ba.ttf",
     "static/media/welcome-bg.png": "/briefing/static/media/welcome-bg.19418be27c5f873a0e32.png",
@@ -11,10 +11,10 @@
     "static/media/Close.svg": "/briefing/static/media/Close.1f99bcda809b3cd95ed30f7fd0ec60e1.svg",
     "static/media/Expand.svg": "/briefing/static/media/Expand.6e75d5f34097e328c319.svg",
     "main.882e084f.css.map": "/briefing/static/css/main.882e084f.css.map",
-    "main.601ddccc.js.map": "/briefing/static/js/main.601ddccc.js.map"
+    "main.f616fcf4.js.map": "/briefing/static/js/main.f616fcf4.js.map"
   },
   "entrypoints": [
     "static/css/main.882e084f.css",
-    "static/js/main.601ddccc.js"
+    "static/js/main.f616fcf4.js"
   ]
 }
