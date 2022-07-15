@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { useCallback, memo } from 'react'
 
 import Navigation from '../navigation/Navigation'
 import TextArea from '../../../styled-components/TextArea/index'
@@ -9,53 +9,52 @@ import './styles.scss'
 
 const Third = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activeIndex, setActiveIndex }) => {
 
-    const handleChange = (event) => {
-        const { name, value } = event.target
-        if (value.length <= 250) {
-            setData({...data, [name]: value})
+    const handleChange = useCallback((event) => event.target.value.length <= 250 && setData({ ...data, [event.target.name]: event.target.value }), [data, setData])
+
+    const handleDelete = (event) => setData({ ...data, [event.target.name]: "" })
+
+    const textareaData = [
+        {
+            name: "books",
+            value: data.books,
+            mainQuestion: "Читаете книги?",
+            questionDescription: "Расскажите, какие книги прочитали за последний год? Какая из списка понравилась больше всего?"
+        },
+        {
+            name: "courses",
+            value: data.courses,
+            mainQuestion: "Какие курсы вы проходили в последнее время?",
+            questionDescription: "Какие курсы, лекции, марафоны проходили? Может быть, изучали документации или кейсы коллег по цеху?"
+        },
+        {
+            name: "sources",
+            value: data.sources,
+            mainQuestion: "Какими источниками пользуетесь?",
+            questionDescription: "Поделитесь источниками - на какие профессиональные паблики или профили вы подписаны? Блоги, СМИ, сервисы, авторы - всё, что вдохновляет и помогает в личном и профессиональном росте!"
+        },
+        {
+            name: "expectionsIn5Years",
+            value: data.expectionsIn5Years,
+            mainQuestion: "Кем видите себя через 5 лет?",
+            questionDescription: "Мы собираем команду не на 1 день. Поэтому хочется работать с амбициозными людьми, которые жаждут покорять новые горизонты! До какого профессионального уровня вы хотели бы дорасти?"
         }
-    }
+    ]
 
     return (
         <>
             <div className="question__wrapper">
                 <div className="input__wrapper">
-                    <div className="input_textarea_wrapper">
-                        <label>Читаете книги?</label>
-                        <div>
-                            <TextArea value={data.books} name="books" style={data.books.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.books.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, books: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Расскажите, какие книги прочитали за последний год? Какая из списка понравилась больше всего?</p>
+                    {textareaData.map(({ name, value, mainQuestion, questionDescription }) => (
+                        <div className="input_textarea_wrapper">
+                            <label>{mainQuestion}</label>
+                            <div>
+                                <TextArea value={value} name={name} style={value.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="Ваш ответ" onChange={handleChange} />
+                                <img style={value.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} name={name} onClick={handleDelete} src={closeSvg} alt="closeBtn" />
+                                <p>{questionDescription}</p>
+                            </div>
+                            <p className="length" style={{ margin: '5px 0 0 10px' }}>{value.length}/250</p>
                         </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.books.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Какие курсы вы проходили в последнее время?</label>
-                        <div>
-                            <TextArea value={data.courses} name="courses" style={data.courses.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.courses.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, courses: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Какие курсы, лекции, марафоны проходили? Может быть, изучали документации или кейсы коллег по цеху?</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.courses.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Какими источниками пользуетесь?</label>
-                        <div>
-                            <TextArea value={data.sources} name="sources" style={data.sources.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.sources.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, sources: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Поделитесь источниками - на какие профессиональные паблики или профили вы подписаны? Блоги, СМИ, сервисы, авторы - всё, что вдохновляет и помогает в личном и профессиональном росте!</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.sources.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Кем видите себя через 5 лет?</label>
-                        <div>
-                            <TextArea value={data.expectionsIn5Years} name="expectionsIn5Years" style={data.expectionsIn5Years.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.expectionsIn5Years.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, expectionsIn5Years: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Мы собираем команду не на 1 день. Поэтому хочется работать с амбициозными людьми, которые жаждут покорять новые горизонты! До какого профессионального уровня вы хотели бы дорасти?</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.expectionsIn5Years.length}/250</p>
-                    </div>
+                    ))}
                 </div>
             </div>
             <Navigation

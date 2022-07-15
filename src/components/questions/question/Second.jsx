@@ -1,4 +1,4 @@
-import { memo } from "react"
+import { useCallback, memo } from "react"
 
 import TextArea from '../../../styled-components/TextArea/index'
 import Navigation from "../navigation/Navigation"
@@ -9,44 +9,46 @@ import './styles.scss'
 
 const Second = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activeIndex, setActiveIndex }) => {
 
-    const handleChange = (event) => {
-        const { name, value } = event.target
-        if (value.length <= 250) {
-            setData({...data, [name]: value})
-        }
-    }
+    const handleChange = useCallback((event) => event.target.value.length <= 250 && setData({ ...data, [event.target.name]: event.target.value }), [data, setData])
+
+    const handleDelete = (event) => setData({ ...data, [event.target.name]: "" })
+
+    const textareaData = [
+        {
+            name: "participated",
+            value: data.participated,
+            mainQuestion: "В каких проектах вы участвовали?",
+            questionDescription: "Расскажите о своём опыте: Какой проект показался вам самым интересным? Чем он так запомнился?"
+        },
+        {
+            name: "failures",
+            value: data.failures,
+            mainQuestion: "Неудачи в работе",
+            questionDescription: "А что на счет неудачных проектов? Какой самый серьёзный провал случался в вашей практике?d"
+        },
+        {
+            name: "ownProjects",
+            value: data.ownProjects,
+            mainQuestion: "Есть ли у вас собственные проекты?",
+            questionDescription: "Блог, сервис, личная раскрученная страница?d"
+        },
+    ]
 
     return (
         <>
             <div className="question__wrapper">
                 <div className="input__wrapper">
-                    <div className="input_textarea_wrapper">
-                        <label>В каких проектах вы участвовали?</label>
-                        <div> 
-                            <TextArea value={data.participated} name="participated" style={data.participated.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.participated.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, participated: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Расскажите о своём опыте: Какой проект показался вам самым интересным? Чем он так запомнился?</p>
+                    {textareaData.map(({ name, value, mainQuestion, questionDescription }) => (
+                        <div className="input_textarea_wrapper">
+                            <label>{mainQuestion}</label>
+                            <div>
+                                <TextArea value={value} name={name} style={value.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="Ваш ответ" onChange={handleChange} />
+                                <img style={value.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} name={name} onClick={handleDelete} src={closeSvg} alt="closeBtn" />
+                                <p>{questionDescription}</p>
+                            </div>
+                            <p className="length" style={{ margin: '5px 0 0 10px' }}>{value.length}/250</p>
                         </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.participated.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Неудачи в работе</label>
-                        <div>
-                            <TextArea value={data.failures} name="failures" style={data.failures.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.failures.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, failures: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>А что на счет неудачных проектов? Какой самый серьёзный провал случался в вашей практике?</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.failures.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Есть ли у вас собственные проекты?</label>
-                        <div>
-                            <TextArea value={data.ownProjects} name="ownProjects" style={data.ownProjects.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.ownProjects.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, ownProjects: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Блог, сервис, личная раскрученная страница?</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.ownProjects.length}/250</p>
-                    </div>
+                    ))}
                 </div>
             </div>
             <Navigation

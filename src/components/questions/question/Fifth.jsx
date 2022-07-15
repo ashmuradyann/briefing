@@ -1,4 +1,4 @@
-import { memo } from "react"
+import { useCallback, memo } from "react"
 
 import Navigation from '../navigation/Navigation'
 import TextArea from '../../../styled-components/TextArea/index'
@@ -9,53 +9,52 @@ import './styles.scss'
 
 const Fifth = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activeIndex, setActiveIndex }) => {
 
-    const handleChange = (event) => {
-        const { name, value } = event.target
-        if (value.length <= 250) {
-            setData({...data, [name]: value})
+    const handleChange = useCallback((event) => event.target.value.length <= 250 && setData({ ...data, [event.target.name]: event.target.value }), [data, setData])
+
+    const handleDelete = (event) => setData({ ...data, [event.target.name]: "" })
+
+    const textareaData = [
+        {
+            name: "whereToStart",
+            value: data.whereToStart,
+            mainQuestion: "С чего бы начали работу?",
+            questionDescription: "С чего вы планируете начать свою работу в выбранной должности?"
+        },
+        {
+            name: "howNotToDo",
+            value: data.howNotToDo,
+            mainQuestion: "Как не надо делать?",
+            questionDescription: "Покажите пример плохого, на ваш взгляд, кейса в вашей сфере. Почему вы считаете это провалом?"
+        },
+        {
+            name: "howToDo",
+            value: data.howToDo,
+            mainQuestion: "Как надо делать?",
+            questionDescription: "Что вы считаете успешным кейсом? Или просто примеры эффективной работы в вашей сфере?"
+        },
+        {
+            name: "anyQuestions",
+            value: data.anyQuestions,
+            mainQuestion: "Вопросы/пожелания?",
+            questionDescription: "Возможно, в процессе диалога у вас возникли вопросы или предложения. Напишите сейчас, не держите в себе ;)"
         }
-    }
+    ]
 
     return (
         <>
             <div className="question__wrapper">
                 <div className="input__wrapper">
-                    <div className="input_textarea_wrapper">
-                        <label>С чего бы начали работу?</label>
-                        <div>
-                            <TextArea value={data.whereToStart} name="whereToStart" style={data.whereToStart.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.whereToStart.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, whereToStart: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>С чего вы планируете начать свою работу в выбранной должности?</p>
+                    {textareaData.map(({ name, value, mainQuestion, questionDescription }) => (
+                        <div className="input_textarea_wrapper">
+                            <label>{mainQuestion}</label>
+                            <div>
+                                <TextArea value={value} name={name} style={value.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="Ваш ответ" onChange={handleChange} />
+                                <img style={value.length !== 0 ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0 }} name={name} onClick={handleDelete} src={closeSvg} alt="closeBtn" />
+                                <p>{questionDescription}</p>
+                            </div>
+                            <p className="length" style={{ margin: '5px 0 0 10px' }}>{value.length}/250</p>
                         </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.whereToStart.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Как не надо делать?</label>
-                        <div>
-                            <TextArea value={data.howNotToDo} name="howNotToDo" style={data.howNotToDo.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.howNotToDo.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, howNotToDo: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Покажите пример плохого, на ваш взгляд, кейса в вашей сфере. Почему вы считаете это провалом?</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.howNotToDo.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Как надо делать?</label>
-                        <div>
-                            <TextArea value={data.howToDo} name="howToDo" style={data.howToDo.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.howToDo.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, howToDo: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Что вы считаете успешным кейсом? Или просто примеры эффективной работы в вашей сфере?</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.howToDo.length}/250</p>
-                    </div>
-                    <div className="input_textarea_wrapper">
-                        <label>Вопросы / пожелания?</label>
-                        <div>
-                            <TextArea value={data.anyQuestions} name="anyQuestions" style={data.anyQuestions.length !== 0 ? {borderColor: '#000'} : {borderColor: '#75778A'}} placeholder="Ваш ответ" onChange={handleChange} />
-                            <img style={data.anyQuestions.length !== 0 ? {opacity: 1, pointerEvents: "auto"} : {opacity: 0}} onClick={() => setData({ ...data, anyQuestions: ""})}src={closeSvg} alt="closeBtn" />
-                            <p>Возможно, в процессе диалога у вас возникли вопросы или предложения. Напишите сейчас, не держите в себе {";)"}</p>
-                        </div>
-                        <p className="length" style={{margin: '5px 0 0 10px'}}>{data.anyQuestions.length}/250</p>
-                    </div>
+                    ))}
                 </div>
             </div>
             <Navigation

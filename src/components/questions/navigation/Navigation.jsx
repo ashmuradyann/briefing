@@ -10,7 +10,6 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
 
     const location = useLocation()
 
-    const [warnMessage, setWarnMessage] = useState(null)
     const [leftHover, setLeftHover] = useState(null)
     const [rightHover, setRightHover] = useState(null)
 
@@ -34,7 +33,6 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
                             </span>
                         </label>
                     </div>
-                    {warnMessage && !checkboxValid ? <p>Подвердите действие!</p> : null}
                 </div>
                 : null}
             <div className="navigation">
@@ -63,7 +61,6 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
                         className="next__btn" to={positions.right}
                         onClick={() => {
                             if (location.pathname === "/fifth") {
-                                setWarnMessage(true)
                                 onFinish()
                             }
                             document.documentElement.scrollTop = 0

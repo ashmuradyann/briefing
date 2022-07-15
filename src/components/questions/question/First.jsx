@@ -1,4 +1,4 @@
-import { useState, memo } from 'react'
+import { useState, useCallback, memo } from 'react'
 import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
 
 import Validator from 'email-validator'
@@ -12,13 +12,12 @@ import './styles.scss'
 
 const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activeIndex, setActiveIndex }) => {
 
+    const radios = ["PR специалист", "SMM менеджер, маркетолог", "Веб-мастер", "Руководитель отдела продаж", "Frontend-разработчик"]
+
     const [emailWarnMessage, setEmailWarnMessage] = useState(null)
     const [phoneNumberWarnMessage, setPhoneNumberWarnMessage] = useState(null)
 
-    const handleChange = (event) => {
-        const { name, value } = event.target
-        setData({ ...data, [name]: value })
-    }
+    const handleChange = useCallback((event) => setData({ ...data, [event.target.name]: event.target.value}), [data, setData])
     
     const phoneNumberHandleChange = (event) => {
         if(event.target.value.length !== 13) {
@@ -41,8 +40,6 @@ const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
             }, 1000)
             setEmailWarnMessage(false)
     }
-
-    const radios = ["PR специалист", "SMM менеджер, маркетолог", "Веб-мастер", "Руководитель отдела продаж", "Frontend-разработчик"]
 
     return (
         <>
@@ -95,28 +92,6 @@ const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
                                     <option>{el}</option>
                                 ))}
                             </select>
-                            {/* <Select
-                                defaultValue="выберите должность"
-                                className="select"
-                                style={{
-                                    border: "2px solid #75778A",
-                                    width: 500,
-                                    height: "60px"
-                                }}
-                                onChange={handleChange}
-                            >
-                                {radios.map((el, i) => (
-                                    <Option style={{border: "2px solid #75778A"}} key={i}>{el}</Option>
-                                ))}
-                            </Select> */}
-                            {/* <div className="select">
-                                <input value={data.jobTypeSelected} onFocus={() => setSelectStyle(true)} onBlur={() => setSelectStyle(false)} className="options" readonly={true} />
-                                <div className="option">
-                                    {radios.map((el, i) => (
-                                        <div key={i} className="option">{el}</div>
-                                    ))}
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                     <div className="input_radio_wrapper">
