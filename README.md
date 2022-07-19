@@ -1,1 +1,1 @@
-# Link: https://ashmuradyann.github.io/briefing/
+# Demo: https://ashmuradyann.github.io/briefing/
