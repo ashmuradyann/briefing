@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
 
 import './welcome.scss'
-import logo from '../../assets/images/logo.png'
 import feedbackLogo from '../../assets/images/feedbackLogo.png'
 
 
@@ -22,13 +21,11 @@ const Welcome = ({ activeIndex, setActiveIndex }) => {
     return (
         <div className="welcome__wrapper">
             <div className="welcome__container">
-                <img className="welcome_logo_phones" src={logo} alt="logo" />
                 <div className="welcome">
                     <div className="welcome__text">
                         <h1>Анкета соискателя</h1>
                         <h2>Добро пожаловать! Ты видишь эту страницу, потому что откликался на вакансию в компании Easy-I. Мы внимательно знакомимся с каждой кандидатурой.</h2>
                     </div>
-                    <img className="welcome__logo" src={logo} alt="logo" />
                 </div>
                 <div className="starting">
                     <div className="starting__text">

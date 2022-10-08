@@ -24,14 +24,12 @@ function App() {
     email: "",
     phoneNumber: "",
     jobTypeCheckbox: {
-      "PR специалист": "off",
-      "SMM менеджер, маркетолог": "off",
-      "Веб-мастер": "off",
-      "Руководитель отдела продаж": "off",
-      "Frontend-разработчик": "off"
+      "PR специалист": false,
+      "SMM менеджер, маркетолог": false,
+      "Веб-мастер": false,
+      "Руководитель отдела продаж": false,
+      "Frontend-разработчик": false
     },
-    jobTypeSelected: "выберите должность",
-    jobType: "",
     participated: "",
     failures: "",
     ownProjects: "",
@@ -54,7 +52,6 @@ function App() {
         "имя": data.name,
         "email": data.email,
         "должности": data.jobTypeCheckbox,
-        "должность": data.jobType,
         "проекты в которых участвовал(а)": data.participated,
         "неудачи": data.failures,
         "свои проекты": data.ownProjects,

@@ -53,10 +53,10 @@ const Navigation = ({ data, positions, onFinish, checkboxValid, setCheckboxValid
                         && !emailWarnMessage
                         && data.phoneNumber.length !== 0
                         && !phoneNumberWarnMessage
-                        && data.jobType.length !== 0
-                        ? checkboxValid !== true && location.pathname === "/fifth"
-                            ? { pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede" }
-                            : null
+                        && Object.entries(data.jobTypeCheckbox).map(entry => entry[1]).filter(el => el === true).length > 0
+                        ? location.pathname === "/fifth" && checkboxValid
+                            ? null
+                            : { pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede" }
                         : { pointerEvents: "none", backgroundColor: "#dedede", borderColor: "#dedede" }}
                         className="next__btn" to={positions.right}
                         onClick={() => {

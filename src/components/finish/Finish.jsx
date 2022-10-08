@@ -7,8 +7,6 @@ import InstagramIcon from './icons/InstagramIcon'
 import TelegramIcon from './icons/TelegramIcon'
 import VKIcon from './icons/VKIcon'
 
-import logo from '../../assets/images/logo.png'
-
 const Finish = () => {
   return (
     <div className="finish__wrapper">
@@ -26,11 +24,9 @@ const Finish = () => {
               <a href="https://easy-i.ru/">https://easy-i.ru/</a>
             </div>
           </div>
-          <img className="finish__logo" src={logo} alt="logo" />
         </div>
         <div className="contacts">
           <h2>Наши контакты:</h2>
-          <a href="mailto:public@easy-i.ru">public@easy-i.ru</a>
           <div className="icons">
             <a href="#"><DribbleIcon /></a>
             <a href="#"><BehanceIcon /></a>

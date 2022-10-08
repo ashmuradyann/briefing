@@ -1,5 +1,4 @@
 import { useState, useCallback, memo } from 'react'
-import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
 
 import Validator from 'email-validator'
 
@@ -74,38 +73,14 @@ const First = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
                     <div className="input_checkbox_wrapper">
                         <label>Какая должность интересует?</label>
                         <div>
-                            {radios.map((el, i) => (
-                                <label>
-                                    <input type="checkbox" onChange={(e) => setData({ ...data, jobTypeCheckbox: { ...data.jobTypeCheckbox, [el]: e.target.value } })} />
+                            {radios.map((el, i) => {
+                                return (
+                                <label key={i}>
+                                    <input type="checkbox" checked={data.jobTypeCheckbox[el]} onChange={(e) => setData({ ...data, jobTypeCheckbox: { ...data.jobTypeCheckbox, [el]: e.target.checked } })} />
                                     <span className="fake"></span>
                                     <span>{el}</span>
                                 </label>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="input_select_wrapper">
-                        <label>Какая должность интересует?</label>
-                        <div>
-                            <select>
-                                <option disabled selected>выберите должность</option>
-                                {radios.map((el, i) => (
-                                    <option>{el}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-                    <div className="input_radio_wrapper">
-                        <label>Какая должность интересует?</label>
-                        <div>
-                            <RadioGroup name="jobType" onChange={handleChange}>
-                                {radios.map((el, i) => (
-                                    <FormControlLabel key={i} value={el} control={<Radio sx={{
-                                        '& .MuiSvgIcon-root': {
-                                            fontSize: 40,
-                                        },
-                                    }} checked={data.jobType === el} />} label={el} />
-                                ))}
-                            </RadioGroup>
+                            )})}
                         </div>
                     </div>
                 </div>

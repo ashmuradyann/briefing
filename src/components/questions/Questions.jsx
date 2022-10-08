@@ -2,7 +2,6 @@ import { memo } from 'react'
 import './questions.scss'
 import Progress from './progress/Progress'
 
-import logo from '../../assets/images/mini-logo.png'
 import { Outlet } from 'react-router-dom'
 
 const Questions = ({ title }) => {
@@ -16,7 +15,6 @@ const Questions = ({ title }) => {
             <div>
               <Progress />
             </div>
-            <img src={logo} alt="logo" />
           </div>
         </div>
         <Outlet />

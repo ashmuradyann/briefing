@@ -44,8 +44,8 @@ const Fifth = ({ data, setData, checkboxValid, setCheckboxValid, onFinish, activ
         <>
             <div className="question__wrapper">
                 <div className="input__wrapper">
-                    {textareaData.map(({ name, value, mainQuestion, questionDescription }) => (
-                        <div className="input_textarea_wrapper">
+                    {textareaData.map(({ name, value, mainQuestion, questionDescription }, i) => (
+                        <div className="input_textarea_wrapper" key={i}>
                             <label>{mainQuestion}</label>
                             <div>
                                 <TextArea value={value} name={name} style={value.length !== 0 ? { borderColor: '#000' } : { borderColor: '#75778A' }} placeholder="Ваш ответ" onChange={handleChange} />
