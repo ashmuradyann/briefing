@@ -17,12 +17,6 @@ const Finish = () => {
             <div className="h2">
               <h2>Спасибо! Мы получили вашу анкету и постараемся ответить в течение 3-х рабочих дней.</h2>
             </div>
-            <div className="h2">
-              <h2>А пока вы можете больше узнать о нас по ссылке</h2>
-            </div>
-            <div className="href">
-              <a href="https://easy-i.ru/">https://easy-i.ru/</a>
-            </div>
           </div>
         </div>
         <div className="contacts">
