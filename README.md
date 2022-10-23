@@ -1,2 +1,2 @@
 # Briefing app using react js
-# The link: ashmuradyann.github.io/briefing
+# The link: https://ashmuradyann.github.io/briefing
